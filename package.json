@@ -1,0 +1,12 @@
+{
+  "name": "snap-go",
+  "version": "0.0.1",
+  "description": "This is a coop project between 3 students for JS2 CA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
