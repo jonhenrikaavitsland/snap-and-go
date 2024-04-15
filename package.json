@@ -4,10 +4,7 @@
   "description": "This is a coop project between 3 students for JS2 CA",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "sass src/scss:dist/css --watch",
-    "start": "live-server",
-    "dev": "npm-run-all --parallel watch start"
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [],
   "author": "",
