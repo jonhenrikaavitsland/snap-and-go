@@ -11,3 +11,16 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here
+
+
+nav {
+  figure {
+    max-width: 130px;
+  }
+}
+
+.fa-duotone {
+  --fa-primary-color: #333333;
+  --fa-secondary-color: #FF7373;
+  --fa-secondary-opacity: 1
+}
