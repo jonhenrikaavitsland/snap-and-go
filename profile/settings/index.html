@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Discover this amazing photo on Snap & Go! Dive into the details, join the conversation, and share your thoughts on this stunning shot.">
-    <title>Post | SNAP & GO</title>
+        content="Customize your profile to stand out amongst the crowd and get recognized.">
+    <title>Profile Settings | SNAP & GO</title>
     <link rel="shortcut icon" href="../../src/assets/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../../dist/css/index.css">
     <script type="module" src="../../src/js/index.js"></script>
@@ -54,11 +53,22 @@
     <main class="flex-grow-1 pt-4">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../">Feed</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Post#123</li>
+          <li class="breadcrumb-item"><a href="#">Profile</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Settings</li>
         </ol>
       </nav>
-      <div class="container-fluid d-flex justify-content-center post-container">
+      <div class="row user-bio gap-4 py-5">
+        <div class="w-auto">
+          <img src="https://i.pravatar.cc/131" class="rounded-circle img-fluid border border-2 border-dark" alt="the user">
+        </div>
+        <section class="col d-flex flex-column">
+          <h1>@username</h1>
+          <div class="flex-grow-1 d-flex align-items-center">
+            <p>This is my bio example...</p>
+          </div>
+        </section>
+      </div>
+      <div class="container-fluid settings-container d-flex justify-content-center">
         <div class="spinner-border text-secondary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
@@ -68,5 +78,5 @@
 
     </footer>
   </body>
-  
+
 </html>
