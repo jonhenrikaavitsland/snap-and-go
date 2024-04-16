@@ -31,3 +31,10 @@ nav {
   --fa-secondary-color: #FF7373;
   --fa-secondary-opacity: 1
 }
+
+@include media-breakpoint-up(md) {
+
+  .search-bar {
+    width: 500px !important;
+  }
+}
