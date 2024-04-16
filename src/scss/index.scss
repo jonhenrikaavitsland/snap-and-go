@@ -3,12 +3,11 @@
 // Custom.scss
 
 // Option A: Include all of Bootstrap
-
+;
 @import "./overrides";
 @import "./overrides-dark";
 
 // Include any default variable overrides here (though functions won't be available)
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
-
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here
