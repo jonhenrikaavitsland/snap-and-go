@@ -11,12 +11,12 @@
       <script type="module" src="./src/js/index.js"></script>
       <script src="https://kit.fontawesome.com/a4285c5b9b.js" crossorigin="anonymous"></script>
   </head>
-<body class="d-flex vh-100">
-  <header>
-    <nav class="navbar navbar-expand-md fixed-top">
+<body class="d-flex vh-100 p-4">
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-md">
       <div class="container-fluid position-relative justify-content-center">
         <button class="navbar-toggler position-absolute top-0 start-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="toggle navigation">
-          <i class="fa-duotone fa-bars"></i>
+          <i class="fa-duotone fa-bars fa-xl"></i>
         </button>
         <figure class="row">
           <img src="./src/assets/images/logo.png" class="img-fluid" alt="snap and go">
@@ -32,18 +32,18 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
+                <a href="#" class="nav-link disabled" data-ol-has-click-handler="">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link disabled" data-ol-has-click-handler="">Feed</a>
+              </li>
+              <li class="nav-item pb-2 pb-md-0 pe-md-2">
                 <a href="#" class="nav-link active" aria-current="page" data-ol-has-click-handler="">Login</a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link" data-ol-has-click-handler="">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link" data-ol-has-click-handler="">Feed</a>
-              </li>
-              <div class="form-check form-switch pt-2">
+              <li class="nav-item form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">Dark-mode</label>
-              </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -54,7 +54,7 @@
 
   </main>
   <footer>
-    
+
   </footer>
 </body>
 
