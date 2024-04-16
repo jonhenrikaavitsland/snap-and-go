@@ -51,8 +51,35 @@
         </div>
       </nav>
     </header>
-    <main class="flex-grow-1">
-
+    <main class="flex-grow-1 pt-4">
+      <div class="container-fluid d-flex justify-content-md-end">
+        <form class="d-flex pb-5 search-bar w-100" role="search">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search the feed" aria-label="Search" aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="submit" id="button-addon2">Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="container-fluid d-flex justify-content-end pb-5">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <span class="dropdown-item">Newest first</span>
+            </li>
+            <li>
+              <span class="dropdown-item">Oldest first</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="feed-container container-fluid d-flex justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </main>
     <footer>
 

@@ -15,7 +15,6 @@ $pink: #FF7373;
 
 $secondary: $pink;
 
-
 // Body
 $body-color: $black;
 
@@ -36,13 +35,12 @@ $spacers: (
   5: $spacer * 1.875,
 );
 
-$nav-link-padding-y: 0;
-
 $grid-gutter-width: 0;
+
+$nav-link-padding-y: 0;
 
 $navbar-light-toggler-border-color: $white;
 $navbar-toggler-focus-width: 0;
+$navbar-light-active-color: $black;
 
 $offcanvas-horizontal-width: 250px;
-
-$navbar-light-active-color: $secondary;
