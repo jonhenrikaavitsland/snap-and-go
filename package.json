@@ -4,7 +4,10 @@
   "description": "This is a coop project between 3 students for JS2 CA",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "watch2": "sass src/scss:dist/css --watch",
+    "start": "live-server",
+    "dev": "npm-run-all --parallel watch2 start"
   },
   "keywords": [],
   "author": "",
