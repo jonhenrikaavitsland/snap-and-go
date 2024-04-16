@@ -14,6 +14,7 @@ $blue: #1A7AFF;
 $pink: #FF7373;
 
 $secondary: $pink;
+$dark: $black;
 
 // Body
 $body-color: $black;
@@ -24,6 +25,9 @@ $border-radius: 0.625rem;
 // Typography
 $font-family-sans-serif:      "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-logo:            "Oswald", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$paragraph-margin-bottom: 0;
+$headings-margin-bottom: 0;
 
 $spacer: 1rem !default;
 $spacers: (
