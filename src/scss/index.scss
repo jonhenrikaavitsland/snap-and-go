@@ -32,6 +32,11 @@ nav {
   --fa-secondary-opacity: 1
 }
 
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
 @include media-breakpoint-up(md) {
 
   .search-bar {
