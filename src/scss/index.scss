@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 // Custom.scss
 
 // Option A: Include all of Bootstrap
-;
 @import "./overrides";
 @import "./overrides-dark";
 
@@ -11,7 +10,6 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here
-
 
 nav {
   figure {
@@ -28,8 +26,8 @@ nav {
 
 .fa-duotone {
   --fa-primary-color: #333333;
-  --fa-secondary-color: #FF7373;
-  --fa-secondary-opacity: 1
+  --fa-secondary-color: #ff7373;
+  --fa-secondary-opacity: 1;
 }
 
 .spinner-border {
@@ -38,8 +36,11 @@ nav {
 }
 
 @include media-breakpoint-up(md) {
-
   .search-bar {
     width: 500px !important;
+  }
+
+  .custom-width {
+    width: 50% !important;
   }
 }
