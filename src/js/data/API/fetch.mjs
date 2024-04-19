@@ -10,7 +10,7 @@ export async function fetchData(url, object) {
   const result = await response.json();
 
   if (!response.ok) {
-    // thro error
+    throw new Error(response.status);
   }
 
   return result;
