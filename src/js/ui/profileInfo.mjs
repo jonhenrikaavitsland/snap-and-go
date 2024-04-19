@@ -3,7 +3,7 @@ export function personalProfileInfo(name, bio, image) {
   const userBio = document.querySelector(".user-bio section div p");
   const userImage = document.querySelector(".user-bio div img");
 
-  userName.textContent = name;
+  userName.textContent = "@" + name;
   userBio.textContent = bio;
   userImage.src = image;
 }

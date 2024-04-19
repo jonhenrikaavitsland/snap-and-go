@@ -1,3 +1,6 @@
-import { getObject } from "../localStorage/getValue/getObject.mjs";
+import { personalProfileInfo } from "../ui/profileInfo.mjs";
+import { propertiesToVariables } from "../localStorage/getValue/destructureObject.mjs";
 
-getObject();
+const { name, bio, imageSrc } = propertiesToVariables();
+
+personalProfileInfo(name, bio, imageSrc);
