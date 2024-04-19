@@ -6,14 +6,14 @@
 
 export function router() {
   switch (location.pathname) {
-    case "/profile/":
-      return import("../pages/profile.mjs");
     case "/profile/settings/":
       return import("../pages/profileSettings.mjs");
-    case "/feed/":
-      return import("../pages/feed.mjs");
+    case "/profile/":
+      return import("../pages/profile.mjs");
     case "/feed/post/":
       return import("../pages/post.mjs");
+    case "/feed/":
+      return import("../pages/feed.mjs");
     case "/register/":
       return import("../pages/register.mjs");
     case "/":
