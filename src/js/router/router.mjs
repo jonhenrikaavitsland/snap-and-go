@@ -7,18 +7,18 @@
 export function router() {
   switch (location.pathname) {
     case "/profile/":
-      return import("../pages/profile.js");
+      return import("../pages/profile.mjs");
     case "/profile/settings/":
-      return import("../pages/profileSettings.js");
+      return import("../pages/profileSettings.mjs");
     case "/feed/":
-      return import("../pages/feed.js");
+      return import("../pages/feed.mjs");
     case "/feed/post/":
-      return import("../pages/post.js");
+      return import("../pages/post.mjs");
     case "/register/":
-      return import("../pages/register.js");
+      return import("../pages/register.mjs");
     case "/":
-      return import("../pages/login.js");
+      return import("../pages/login.mjs");
     default:
-      return import("../pages/404.js");
+      return import("../pages/404.mjs");
   }
 }
