@@ -35,6 +35,10 @@ nav {
   height: 3rem;
 }
 
+.user-bio div img {
+  width: 131px;
+}
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
