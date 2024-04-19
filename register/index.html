@@ -157,13 +157,14 @@
             alt="snap and go"
           />
           <h1 class="text-center pt-2">Register</h1>
-        <form action="/profile/">
+        <form method="POST">
           <div class="mb-2">
             <label for="inputEmail" class="form-label"
               ></label
             >
             <input
               type="email"
+              name="email"
               class="form-control"
               id="inputEmail"
               placeholder="Email"
@@ -178,6 +179,7 @@
             <label for="inputPassword" class="form-label"></label>
             <input
               type="password"
+              name="password"
               class="form-control"
               placeholder="Password"
               id="inputPassword"
@@ -189,12 +191,13 @@
             </div>
           </div>
           <div class="mb-2">
-            <label for="inputPassword" class="form-label"></label>
+            <label for="inputRepeatPassword" class="form-label"></label>
             <input
               type="password"
+              name="repeatPassword"
               class="form-control"
               placeholder="Repeat Password"
-              id="inputPassword"
+              id="inputRepeatPassword"
               required
               minlength="8"
             />
