@@ -1,4 +1,4 @@
-import { getName } from "../../localStorage/getValue/getName.mjs";
+import { propertiesToVariables } from "../../localStorage/getValue/propertiesToVariables.mjs";
 import { loginUser } from "./loginUser.mjs";
 
 export async function loginAuth() {
@@ -10,8 +10,7 @@ export async function loginAuth() {
 
     await loginUser(email, password);
 
-    const name = getName();
-    console.log(name);
-    window.location.href = `/profile/?name=${name}`;
+    const object = propertiesToVariables();
+    window.location.href = `/profile/?name=${object.name}`;
   });
 }
