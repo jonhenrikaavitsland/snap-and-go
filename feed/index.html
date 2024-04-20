@@ -59,9 +59,17 @@
             <i class="fa-solid fa-image fa-xl"></i>
           </button>
         </div>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        <div class="collapse card card-body upload-body" id="collapseExample">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">What would you like to share?</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Max 150 characters</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="150" required></textarea>
+          </div>
+          <div class="mb-3 d-flex justify-content-end">
+            <button class="btn btn-secondary upload-btn">Upload</button>
           </div>
         </div>
       </div>
