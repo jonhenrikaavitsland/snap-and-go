@@ -55,23 +55,23 @@
           <div class="w-auto border d-flex align-items-center px-2 rounded-start">
             <p>Amaze us!</p>
           </div>
-          <button class="btn btn-secondary w-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button class="btn btn-secondary w-auto" type="button" data-bs-toggle="collapse" data-bs-target="#uploadForm" aria-expanded="false" aria-controls="uploadForm">
             <i class="fa-solid fa-image fa-xl"></i>
           </button>
         </div>
-        <div class="collapse card card-body upload-body" id="collapseExample">
+        <form class="collapse card card-body upload-body" id="uploadForm">
           <div class="mb-3">
             <label for="formFileMultiple" class="form-label">What would you like to share?</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple required>
+            <input class="form-control" type="file" id="formFileMultiple" multiple accept=".jpg, .jpeg, .png" required>
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Max 150 characters</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="150" required></textarea>
+            <label for="textareaControl" class="form-label">Max 150 characters</label>
+            <textarea class="form-control" id="textareaControl" rows="3" maxlength="150" required></textarea>
           </div>
           <div class="mb-3 d-flex justify-content-end">
-            <button class="btn btn-secondary upload-btn">Upload</button>
+            <button class="btn btn-secondary upload-btn" type="submit">Upload</button>
           </div>
-        </div>
+        </form>
       </div>
       <div class="container-fluid d-flex justify-content-md-end">
         <form class="d-flex pb-5 search-bar w-100" role="search">
