@@ -13,9 +13,6 @@ export async function getPostsWithImages() {
       },
     });
 
-    console.log(posts.data[0].media);
-    console.log(posts);
-
     for (let y = 0; y < posts.data.length; y++) {
       if (posts.data[y].media) {
         postsWithImages.push(posts.data[y]);
