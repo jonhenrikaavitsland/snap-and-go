@@ -1,3 +1,3 @@
-import { getPostsWithImages } from "../data/API/getPostsWithImage.mjs";
+import { postsWithImage } from "../data/posts.mjs";
 
-getPostsWithImages().then(console.log);
+console.log(postsWithImage);
