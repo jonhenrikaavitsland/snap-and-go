@@ -2,8 +2,8 @@ import { load } from "../../localStorage/load.mjs";
 import { API_BASE, API_KEY, API_POSTS } from "./constants.mjs";
 import { fetchData } from "./fetch.mjs";
 
-export async function getPostsWithImages() {
-  const postsWithImages = [];
+export async function getPostsWithTags() {
+  const postsWithTag = [];
 
   for (let i = 0; i < 2; i++) {
     let posts = await fetchData(`${API_BASE}${API_POSTS}?_author=true&_comments=true&_reactions=true&?page=${i + 1}`, {
@@ -13,11 +13,9 @@ export async function getPostsWithImages() {
       },
     });
 
-    for (let y = 0; y < posts.data.length; y++) {
-      if (posts.data[y].media) {
-        postsWithImages.push(posts.data[y]);
-      }
+    if (posts.data[i].tags[0] === "snapgo") {
+      postsWithTag.push(posts.data[i]);
     }
   }
-  return postsWithImages;
+  return postsWithTag;
 }
