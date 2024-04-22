@@ -57,9 +57,10 @@
           </div>
           <button class="btn btn-secondary w-auto" type="button" data-bs-toggle="collapse" data-bs-target="#uploadForm" aria-expanded="false" aria-controls="uploadForm">
             <i class="fa-solid fa-image fa-xl"></i>
+            <span class="visually-hidden">upload</span>
           </button>
         </div>
-        <form class="collapse card card-body upload-body" id="uploadForm">
+        <form method="post" class="collapse card card-body upload-body" id="uploadForm">
           <div class="mb-3">
             <label for="image-url" class="form-label">Your image url:</label>
             <div class="input-group">
