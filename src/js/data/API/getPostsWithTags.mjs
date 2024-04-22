@@ -2,6 +2,10 @@ import { load } from "../../localStorage/load.mjs";
 import { API_BASE, API_KEY, API_POSTS } from "./constants.mjs";
 import { fetchData } from "./fetch.mjs";
 
+/**
+ * This function retrieves all posts from the API and then filters out only the posts that holds a specific tag
+ * @returns an array of posts that contains a specified tag
+ */
 export async function getPostsWithTags() {
   const newArray = [];
 

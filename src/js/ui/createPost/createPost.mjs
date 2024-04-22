@@ -1,5 +1,11 @@
 import { sendPost } from "../../data/API/sendPost.mjs";
 
+/**
+ * This function gathers inputs from form field inputs and sends a 
+ * create post request to the API via the sendPost function. 
+ * It clears the form fields after successfully sending data to the API.
+ * It console logs errors and success message. We will swap these out for visible validation later.
+ */
 export function createPost() {
   document.getElementById("uploadForm").addEventListener("submit", function (event) {
     event.preventDefault();
