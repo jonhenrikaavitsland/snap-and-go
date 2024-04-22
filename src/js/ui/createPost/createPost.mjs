@@ -1,24 +1,26 @@
 import { sendPost } from "../../data/API/sendPost.mjs";
-import { checkTextInputLength } from "./checkTextInputLength.mjs";
 
 export function createPost() {
-  const imageUrl = document.querySelector("#image-url").value;
-  const title = document.querySelector("#textareaControl").value;
-  const postForm = document.querySelector("#uploadForm");
-  console.log(postForm);
-
-  postForm.addEventListener("submit", async event => {
+  document.getElementById("uploadForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    checkTextInputLength(title, 150);
+    const title = document.getElementById("textareaControl").value;
 
     let mediaObject = {
-      url: imageUrl,
+      url: document.getElementById("image-url").value,
       alt: "",
     };
 
     let tags = ["snapgo"];
 
-    await sendPost(title, tags, mediaObject).then(console.log());
+    try {
+      sendPost(title, tags, mediaObject);
+      console.log("Upload was successful");
+
+      document.getElementById("image-url").value = "";
+      document.getElementById("textareaControl").value = "";
+    } catch (error) {
+      console.log(error);
+    }
   });
 }

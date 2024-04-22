@@ -5,7 +5,7 @@ import { load } from "../../localStorage/load.mjs";
 export async function sendPost(title, tags, media) {
   const postResponse = await fetchData(`${API_BASE}${API_POSTS}`, {
     headers: {
-      "Content-Type": "application/json; charset=UTF-8",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${load("token")}`,
       "X-Noroff-API-Key": API_KEY,
     },

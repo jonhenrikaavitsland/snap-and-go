@@ -5,5 +5,6 @@ import { createPost } from "../ui/createPost/createPost.mjs";
 console.log("Posts W Tag", postsWithTags);
 console.log("Posts chunks", postsWithTagsChunks);
 
-createPost();
+
 renderCards(postsWithTagsChunks[0]);
+createPost();
