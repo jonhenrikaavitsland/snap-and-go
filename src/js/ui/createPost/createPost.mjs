@@ -4,9 +4,10 @@ import { checkTextInputLength } from "./checkTextInputLength.mjs";
 export function createPost() {
   const imageUrl = document.querySelector("#image-url").value;
   const title = document.querySelector("#textareaControl").value;
-  const form = document.querySelector("#uploadForm");
+  const postForm = document.querySelector("#uploadForm");
+  console.log(postForm);
 
-  form.addEventListener("submit", async event => {
+  postForm.addEventListener("submit", async event => {
     event.preventDefault();
 
     checkTextInputLength(title, 150);
