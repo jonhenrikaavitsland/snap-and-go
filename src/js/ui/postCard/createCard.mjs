@@ -1,3 +1,8 @@
+/**
+ * Function builds a html element as a card using bootstrap classes
+ * @param {object} object
+ * @returns a card element that will be rendered on the feed page.
+ */
 export function createCard(object) {
   const element = document.createElement("div");
   element.classList.add("card", "col-md-4", "col-xl-3");
