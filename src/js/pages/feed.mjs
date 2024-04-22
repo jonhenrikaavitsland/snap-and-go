@@ -1,7 +1,9 @@
-import { postsWithImage, postsWithImageChunks } from "../data/posts.mjs";
+import { postsWithTags, postsWithTagsChunks } from "../data/posts.mjs";
 import { renderCards } from "../render/renderCards.mjs";
+import { createPost } from "../ui/createPost/createPost.mjs";
 
-console.log(postsWithImage);
-console.log(postsWithImageChunks);
+console.log(postsWithTags);
+console.log(postsWithTagsChunks);
 
-renderCards(postsWithImageChunks[0]);
+createPost();
+renderCards(postsWithTagsChunks[0]);
