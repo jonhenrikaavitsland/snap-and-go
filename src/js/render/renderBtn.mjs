@@ -11,7 +11,7 @@ export function renderBtn(text, theme, classname) {
   element.classList.add("d-flex", "justify-content-center", "my-5");
 
   const btn = document.createElement("button");
-  btn.classList.add("btn", `btn-${theme}`, classname);
+  btn.classList.add("btn", `btn-${theme}`, "btn-lg", classname);
   btn.textContent = text;
   element.append(btn);
 
