@@ -7,9 +7,30 @@
  */
 
 export function renderBtn(text, theme, classname) {
-  const element = document.createElement("button");
-  element.classList.add("btn", `btn-${theme}`, classname);
-  element.textContent = text;
+  const element = document.createElement("div");
+  element.classList.add("d-flex", "justify-content-center", "my-5")
+
+  const btn = document.createElement("button");
+  btn.classList.add("btn", `btn-${theme}`, classname);
+  btn.textContent = text;
+  element.append(btn);
 
   return element;
 }
+
+
+// export function renderBtn(text, theme, classname) {
+//   const element = document.createElement("div");
+
+//   const btnContainer = document.createElement("div");
+//   btnContainer.classList.add("flex", "justify-content-center");
+
+//   const btn = document.createElement("button");
+//   btn.classList.add("btn", `btn-${theme}`, classname);
+//   btn.textContent = text;
+//   btnContainer.append(btn);
+
+//   element.append(btnContainer);
+
+//   return element;
+// }
