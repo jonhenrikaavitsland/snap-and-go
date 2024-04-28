@@ -5,9 +5,7 @@ import { createCard } from "../ui/postCard/createCard.mjs";
  * It will clear parent before rendering cards via the createCard function.
  * @param {obnject} cards 
  */
-export function renderCards(cards) {
-  const parent = document.querySelector(".feed-container");
-  parent.innerHTML = "";
+export function renderCards(cards, parent) {
   cards.forEach(element => {
     parent.append(createCard(element));
   });
