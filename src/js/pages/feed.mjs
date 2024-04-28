@@ -6,9 +6,6 @@ import { viewMoreBtn } from "../ui/viewMoreBtnFeedPage/viewMoreBtn.mjs";
 
 const parent = document.querySelector(".feed-container");
 
-console.log("Posts W Tag", postsWithTags);
-console.log("Posts chunks", postsWithTagsChunks);
-
 parent.innerHTML = "";
 renderCards(postsWithTagsChunks[0], parent);
 viewMoreBtn("View more", "secondary", "view-more-btn", parent);
