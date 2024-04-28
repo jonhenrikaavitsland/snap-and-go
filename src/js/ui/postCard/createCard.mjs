@@ -5,7 +5,7 @@
  */
 export function createCard(object) {
   const element = document.createElement("div");
-  element.classList.add("card", "col-md-4", "col-xl-3");
+  element.classList.add("card");
 
   const cardTop = document.createElement("div");
   cardTop.classList.add("card-header");
@@ -25,11 +25,15 @@ export function createCard(object) {
 
   element.append(cardTop);
 
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("ratio", "ratio-16x9");
+  element.append(imageContainer);
+
   const image = document.createElement("img");
   image.src = object.media.url;
   image.setAttribute("alt", object.media.alt);
-  image.classList.add("card-img-bottom");
-  element.append(image);
+  image.classList.add("card-img-bottom", "img-fluid");
+  imageContainer.append(image);
 
   return element;
 }
