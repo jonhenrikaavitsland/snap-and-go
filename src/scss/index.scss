@@ -39,6 +39,14 @@ nav {
   width: 131px;
 }
 
+.feed-container {
+  row-gap: 20px !important;
+}
+
+.custom-cursor {
+  cursor: pointer;
+}
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
@@ -47,4 +55,22 @@ nav {
   .custom-width {
     width: 50% !important;
   }
+
+  .feed-container {
+    row-gap: 30px !important;
+
+    .card {
+      width: 48%;
+    }
+  }
 }
+
+@include media-breakpoint-up(xl) {
+  .feed-container {
+    .card {
+      width: 31%;
+    }
+  }
+}
+
+
