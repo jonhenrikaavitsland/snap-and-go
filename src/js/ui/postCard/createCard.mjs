@@ -5,8 +5,8 @@
  */
 export function createCard(object) {
   const element = document.createElement("div");
-  element.classList.add("card");
-  element.addEventListener("click", event => {
+  element.classList.add("card", "custom-cursor");
+  element.addEventListener("click", function () {
     document.location.href = `./post/?id=${object.id}`;
   });
 
