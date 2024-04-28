@@ -6,11 +6,30 @@
 export function createCard(object) {
   const element = document.createElement("div");
   element.classList.add("card");
+  element.addEventListener("click", event => {
+    document.location.href = `./post/?id=${object.id}`;
+  });
 
   const cardTop = document.createElement("div");
-  cardTop.classList.add("card-header");
+  cardTop.classList.add("card-header", "row", "gap-3");
+
+  const avatarContainer = document.createElement("div");
+  avatarContainer.classList.add("col-2");
+
+  const aspect = document.createElement("div");
+  aspect.classList.add("ratio", "ratio-1x1");
+  avatarContainer.append(aspect);
+
+  const avatar = document.createElement("img");
+  avatar.classList.add("img-fluid", "img-thumbnail", "rounded-circle");
+  avatar.src = object.author.avatar.url;
+  avatar.setAttribute("alt", object.author.avatar.alt);
+  aspect.append(avatar);
+
+  cardTop.append(avatarContainer);
 
   const bioWrap = document.createElement("div");
+  bioWrap.classList.add("w-auto");
 
   const user = document.createElement("h4");
   user.textContent = `@${object.author.name}`;
