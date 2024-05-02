@@ -1,3 +1,4 @@
+import { passwordsMatch } from "./passwordsMatch.mjs";
 import { sanitizeEmail } from "./sanitizeEmail.mjs";
 import { sanitizePassword } from "./sanitizePassword.mjs";
 
@@ -14,10 +15,21 @@ export function validateUser() {
   const validStateEmail = sanitizeEmail(emailRegex);
   const validStatePassword = sanitizePassword(passwordRegex);
 
-  if (validStateEmail && validStatePassword) {
-    validState = true;
-  } else {
-    validState = false;
+  switch (location.pathname) {
+    case "/register/":
+      const validStatePasswordRepeat = passwordsMatch();
+      if (validStateEmail && validStatePassword && validStatePasswordRepeat) {
+        validState = true;
+      } else {
+        validState = false;
+      }
+      break;
+    case "/":
+      if (validStateEmail && validStatePassword) {
+        validState = true;
+      } else {
+        validState = false;
+      }
   }
   return validState;
 }
