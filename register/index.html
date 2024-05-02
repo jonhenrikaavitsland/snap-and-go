@@ -157,22 +157,24 @@
             alt="snap and go"
           />
           <h1 class="text-center pt-2">Register</h1>
-        <form method="POST">
+        <form>
           <div class="mb-2">
             <label for="inputEmail" class="form-label"
               ></label
             >
             <input
-              type="email"
+              type="text"
               name="email"
               class="form-control"
               id="inputEmail"
               placeholder="Email"
               aria-describedby="emailHelp"
-              required
             />
-            <div class="invalid-feedback">
+            <div class="invalid-feedback invalid-feedback-email">
               Please enter a correct email!
+            </div>
+            <div class="valid-feedback valid-feedback-email">
+              Looks good!
             </div>
           </div>
           <div class="mb-2">
@@ -183,11 +185,12 @@
               class="form-control"
               placeholder="Password"
               id="inputPassword"
-              required
-              minlength="8"
             />
-            <div class="invalid-feedback">
+            <div class="invalid-feedback invalid-feedback-pw">
               Please enter a password with 8 characters!
+            </div>
+            <div class="valid-feedback valid-feedback-pw">
+              Looks good!
             </div>
           </div>
           <div class="mb-2">
@@ -198,11 +201,12 @@
               class="form-control"
               placeholder="Repeat Password"
               id="inputRepeatPassword"
-              required
-              minlength="8"
             />
-            <div class="invalid-feedback">
+            <div class="invalid-feedback invalid-feedback-pw-match">
               Needs to match password!
+            </div>
+            <div class="valid-feedback valid-feedback-pw-match">
+              Looks good!
             </div>
           </div>
           

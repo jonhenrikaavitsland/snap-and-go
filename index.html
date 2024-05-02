@@ -159,16 +159,18 @@
               ></label
             >
             <input
-              type="email"
+              type="text"
               name="email"
               class="form-control"
               id="inputEmail"
               placeholder="Email"
               aria-describedby="emailHelp"
-              required
             />
-            <div class="invalid-feedback">
-              Please enter a correct email!
+            <div class="invalid-feedback invalid-feedback-email">
+              Email must be a noroff.no or stud.noroff.no email!
+            </div>
+            <div class="valid-feedback valid-feedback-email">
+              Looks good!
             </div>
           </div>
           <div class="mb-3">
@@ -179,11 +181,12 @@
               class="form-control"
               placeholder="Password"
               id="inputPassword"
-              required
-              minlength="8"
             />
-            <div class="invalid-feedback">
-              Please enter a password with 8 characters!
+            <div class="invalid-feedback invalid-feedback-pw">
+              Must be 8 characters and no special characters!
+            </div>
+            <div class="valid-feedback valid-feedback-pw">
+              Looks good!
             </div>
           </div>
           
