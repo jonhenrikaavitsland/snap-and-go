@@ -1,15 +1,26 @@
 /**
- * This function will test if an email matches a valid email format.
- * The function should only accept emails that are specific to Noroff.
- * @param {string} email
- * @returns a trimmed email if successful and null if not successful
+ * validates email input and displays correct informational message on screen.
+ * @param {string} emailRegex
+ * @returns true or false
  */
-export function sanitizeEmail(email) {
-  const emailRegex = /^[^\s@]+@(noroff\.no|stud\.noroff\.no)$/i;
+export function sanitizeEmail(emailRegex) {
+  const emailField = document.querySelector("#inputEmail");
+  const emailError = document.querySelector(".invalid-feedback-email");
+  const emailValid = document.querySelector(".valid-feedback-email");
+  let validState = false;
 
-  if (emailRegex.test(email)) {
-    return email.trim();
+  if (emailField.value.trim() !== "" && !emailRegex.test(emailField.value.trim())) {
+    emailValid.style.display = "none";
+    emailError.style.display = "block";
+    validState = false;
   } else {
-    return null;
+    emailError.style.display = "none";
+    emailValid.style.display = "block";
+    validState = true;
   }
+  if (emailField.value.trim() === "") {
+    emailValid.style.display = "none";
+    validState = false;
+  }
+  return validState;
 }
