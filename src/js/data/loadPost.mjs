@@ -2,6 +2,10 @@ import { getPost } from "./API/getPost.mjs";
 import { getID } from "./getID.mjs";
 import { createCard } from "../ui/postCard/createCard.mjs";
 
+/**
+ * Load and display the post based on the ID from the URL.
+ * @returns {void} - Nothing is returned from this function.
+ */
 export async function loadPost() {
     const postId = getID();
     if (!postId) {
