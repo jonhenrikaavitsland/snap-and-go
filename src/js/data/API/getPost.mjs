@@ -7,14 +7,21 @@ import { fetchData } from "./fetch.mjs";
  * @param {string} id - The post id to retrieve
  * @returns {promise<Object>} A promise that resolves to the post object.
  */
+
+
+
 export async function getPost(id) {
-    const url = `${API_BASE}${API_POSTS}/${id}`;
+    const url = `${API_BASE}${API_POSTS}/${id}`;  
     const options = {
         headers: {
             Authorization: `Bearer ${load("token")}`,
-            "X-Noroff-API-Key": API_KEY 
+            "X-Noroff-API-Key": API_KEY
         }
-        };
+    };
 
-        return await fetchData(url, options);
-    }
+    
+    const post = await fetchData(url, options);
+    return post;  
+}
+
+    
