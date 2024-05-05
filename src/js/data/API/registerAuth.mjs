@@ -10,14 +10,10 @@ export function registerAuth() {
     const email = event.target.email.value.trim();
     const password = event.target.password.value.trim();
 
-    try {
-      const validState = validateUser();
-      if (validState) {
-        await registerUser(name, email, password);
-        window.location.href = "/";
-      }
-    } catch (error) {
-      console.log("something went wrong when registering user", error);
+    const validState = validateUser();
+    if (validState) {
+      await registerUser(name, email, password);
+      window.location.href = "/";
     }
   });
 }
