@@ -1,3 +1,4 @@
+import { renderError } from "../../errorHandling/renderError.mjs";
 import { save } from "../../localStorage/save.mjs";
 import { API_AUIH, API_BASE, API_LOGIN } from "./constants.mjs";
 
@@ -23,5 +24,7 @@ export async function loginUser(email, password) {
     save("profile", profile);
     return profile;
   }
+  const errorParent = document.querySelector(".error-parent");
+  renderError(response.status, errorParent);
   throw new Error(response.status);
 }

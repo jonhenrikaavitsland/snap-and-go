@@ -14,16 +14,12 @@ export function loginAuth() {
     const email = event.target.email.value.trim();
     const password = event.target.password.value.trim();
 
-    try {
-      const validState = validateUser();
-      if (validState === true) {
-        await loginUser(email, password);
-      }
-
-      const object = propertiesToVariables();
-      window.location.href = `/profile/?name=${object.name}`;
-    } catch (error) {
-      console.log("Error logging in", error);
+    const validState = validateUser();
+    if (validState === true) {
+      await loginUser(email, password);
     }
+
+    const object = propertiesToVariables();
+    window.location.href = `/profile/?name=${object.name}`;
   });
 }
