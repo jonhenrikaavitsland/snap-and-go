@@ -1,5 +1,3 @@
-import { getObject } from "./getObject.mjs";
-
 /**
  * Gets user profile details and prepares them to be used elsewhere.
  *
@@ -9,11 +7,12 @@ import { getObject } from "./getObject.mjs";
  *
  * @returns {Object} An object containing the user's name, biography, and image URL.
  */
-export function propertiesToVariables() {
-  const object = getObject();
-  console.log(object);
-  const name = object.name;
-  const bio = object.bio;
-  const imageSrc = object.avatar.url;
+export function propertiesToVariables(user) {
+  console.log(user);
+  const userData = user.data ? user.data : user;
+
+  const name = userData.name;
+  const bio = userData.bio;
+  const imageSrc = userData.avatar.url;
   return { name, bio, imageSrc };
 }

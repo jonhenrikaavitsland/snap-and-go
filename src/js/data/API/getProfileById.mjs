@@ -4,7 +4,7 @@ import { load } from "../../localStorage/load.mjs";
 
 /**
  * A function to fetch profile from the API
- * @param {string} id 
+ * @param {string} id
  * @returns profile data based on a specific id.
  */
 export async function getProfileById(id) {
@@ -14,5 +14,6 @@ export async function getProfileById(id) {
       "X-Noroff-API-Key": API_KEY,
     },
   });
+  console.log(user);
   return user;
 }

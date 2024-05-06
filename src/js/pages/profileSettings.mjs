@@ -1,6 +1,7 @@
 import { propertiesToVariables } from "../localStorage/getValue/propertiesToVariables.mjs";
 import { personalProfileInfo } from "../ui/editProfile/profileInfo.mjs";
-
-const { name, bio, imageSrc } = propertiesToVariables();
+import { getObject } from "../localStorage/getValue/getObject.mjs";
+const object = getObject();
+const { name, bio, imageSrc } = propertiesToVariables(object);
 
 personalProfileInfo(name, bio, imageSrc);
