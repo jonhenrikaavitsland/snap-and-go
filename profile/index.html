@@ -3,107 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Check out cool pics and fun moments on SNAP & GO! Customize your profile, share your snaps, and hang out with fellow photo fans."
-    />
+    <meta name="description" content="Check out cool pics and fun moments on SNAP & GO! Customize your profile, share your snaps, and hang out with fellow photo fans." />
     <title>Profile | SNAP & GO</title>
-    <link
-      rel="shortcut icon"
-      href="../src/assets/icons/favicon.svg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../src/assets/icons/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="../dist/css/index.css" />
     <script type="module" src="../src/js/index.mjs"></script>
-    <script
-      src="https://kit.fontawesome.com/a4285c5b9b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/a4285c5b9b.js" crossorigin="anonymous"></script>
   </head>
   <body class="d-flex flex-column vh-100 p-4 p-md-5 container-xl">
     <header class="container-fluid">
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid position-relative justify-content-center">
-          <button
-            class="navbar-toggler position-absolute top-0 start-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="toggle navigation"
-          >
+          <button class="navbar-toggler position-absolute top-0 start-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="toggle navigation">
             <i class="fa-duotone fa-bars fa-xl"></i>
           </button>
           <figure class="row">
-            <img
-              src="../src/assets/images/logo.png"
-              class="img-fluid"
-              alt="snap and go"
-            />
-            <img
-              src="../src/assets/images/slogan.png"
-              class="img-fluid"
-              alt="snap share connect"
-            />
+            <img src="../src/assets/images/logo.png" class="img-fluid" alt="snap and go" />
+            <img src="../src/assets/images/slogan.png" class="img-fluid" alt="snap share connect" />
           </figure>
-          <div
-            class="offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-              <h5
-                class="offcanvas-title visually-hidden"
-                id="offcanvasNavbarLabel"
-              >
-                Menu
-              </h5>
-              <button
-                type="button"
-                data-bs-dismiss="offcanvas"
-                aria-label="close"
-              >
+              <h5 class="offcanvas-title visually-hidden" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" data-bs-dismiss="offcanvas" aria-label="close">
                 <i class="fa-duotone fa-xmark fa-2xl"></i>
               </button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-2">
                 <li class="nav-item form-check form-switch pe-md-2">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckDefault"
-                    >Dark-mode</label
-                  >
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Dark-mode</label>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="#"
-                    class="nav-link active fw-bold"
-                    data-ol-has-click-handler=""
-                    >Profile</a
-                  >
+                  <a href="#" class="nav-link active fw-bold" data-ol-has-click-handler="">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="../feed/"
-                    class="nav-link"
-                    data-ol-has-click-handler=""
-                    >Feed</a
-                  >
+                  <a href="../feed/" class="nav-link" data-ol-has-click-handler="">Feed</a>
                 </li>
                 <li class="nav-item pb-2 pb-md-0">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    aria-current="page"
-                    data-ol-has-click-handler=""
-                    >Log out</a
-                  >
+                  <a href="#" class="nav-link" aria-current="page" data-ol-has-click-handler="">Log out</a>
                 </li>
               </ul>
             </div>
@@ -114,11 +52,7 @@
     <main class="flex-grow-1 pt-4">
       <div class="row user-bio gap-4 pb-5">
         <div class="w-auto">
-          <img
-            src="https://i.pravatar.cc/131"
-            class="rounded-circle img-fluid border border-2 border-dark"
-            alt="the user"
-          />
+          <img src="https://i.pravatar.cc/131" class="rounded-circle img-fluid border border-2 border-dark" alt="the user" />
         </div>
         <section class="col d-flex flex-column position-relative">
           <h1>@username</h1>
@@ -128,12 +62,12 @@
               <button class="btn btn-primary">Follow</button>
             </div>
           </div>
-          <i class="fa-duotone fa-pen-to-square position-absolute end-0"></i>
+          <a href="#" class="position-absolute end-0 edit-icon">
+            <i class="fa-duotone fa-pen-to-square"></i>
+          </a>
         </section>
       </div>
-      <div
-        class="container-fluid settings-container d-flex justify-content-center"
-      >
+      <div class="container-fluid settings-container d-flex justify-content-center">
         <div class="spinner-border text-secondary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>

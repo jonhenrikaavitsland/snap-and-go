@@ -1,4 +1,3 @@
-import { propertiesToVariables } from "../../localStorage/getValue/propertiesToVariables.mjs";
 import { loginUser } from "./loginUser.mjs";
 import { validateUser } from "../../errorHandling/validate/validateUser.mjs";
 
@@ -9,7 +8,7 @@ import { validateUser } from "../../errorHandling/validate/validateUser.mjs";
 export function loginAuth() {
   const form = document.querySelector("form");
 
-  form.addEventListener("submit", async event => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const email = event.target.email.value.trim();
     const password = event.target.password.value.trim();
@@ -19,7 +18,6 @@ export function loginAuth() {
       await loginUser(email, password);
     }
 
-    const object = propertiesToVariables();
-    window.location.href = `/profile/?name=${object.name}`;
+    window.location.href = `/profile/`;
   });
 }
