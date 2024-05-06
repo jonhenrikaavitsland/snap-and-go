@@ -1,5 +1,6 @@
 import { renderError } from "../../errorHandling/renderError.mjs";
 import { save } from "../../localStorage/save.mjs";
+import { setUserSession } from "../../localStorage/session/setUserSession.mjs";
 import { API_AUIH, API_BASE, API_LOGIN } from "./constants.mjs";
 
 /**
@@ -20,8 +21,7 @@ export async function loginUser(email, password) {
 
   if (response.ok) {
     const { accessToken, ...profile } = (await response.json()).data;
-    save("token", accessToken);
-    save("profile", profile);
+    setUserSession(accessToken, profile);
     return profile;
   }
   const errorParent = document.querySelector(".error-parent");
