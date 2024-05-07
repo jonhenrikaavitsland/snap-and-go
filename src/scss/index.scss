@@ -47,6 +47,10 @@ nav {
   cursor: pointer;
 }
 
+.btn-overlap .btn {
+  margin-right: -10px;
+}
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
@@ -72,5 +76,3 @@ nav {
     }
   }
 }
-
-
