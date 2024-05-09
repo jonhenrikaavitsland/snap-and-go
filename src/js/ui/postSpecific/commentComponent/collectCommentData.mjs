@@ -14,7 +14,7 @@ console.log(commentField);
     const formBtn = document.querySelector("button");
 console.log(formBtn);
 
-    const testRegex = /^[a-zA-Z0-9]*$/;
+    const testRegex = /^[a-zA-Z0-9\s!.,&'"():;?+-]*$/;
 
     commentForm.addEventListener("submit", (event) => {
         event.preventDefault();
