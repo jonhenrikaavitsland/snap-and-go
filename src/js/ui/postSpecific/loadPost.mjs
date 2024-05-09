@@ -3,6 +3,7 @@ import { getID } from "../../data/getID.mjs";
 import { createSpecific } from "./createSpecific.mjs";
 import { postsWithTags } from "../../data/posts.mjs";
 import { findUserByPostId } from "../../data/findUserByPostId.mjs";
+import { createCommentForm } from "./commentComponent/commentForm.mjs";
 
 /**
  * Load and display the post based on the ID from the URL.
@@ -21,6 +22,8 @@ export async function loadPost() {
         const container = document.querySelector(".post-container");
         container.innerHTML = ""; // Clear the spinner
         container.append(postElement);
+        const commentComponent = createCommentForm();
+        container.append(commentComponent);
     } catch (error) {
     console.error("Failed to load post", error);
     }
