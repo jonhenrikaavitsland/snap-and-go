@@ -6,11 +6,14 @@ import { buttonAction } from "../ui/viewMoreBtnFeedPage/buttonAction.mjs";
 import { viewMoreBtn } from "../ui/viewMoreBtnFeedPage/viewMoreBtn.mjs";
 
 const parent = document.querySelector(".feed-container");
+const btnParent = document.querySelector(".btn-container");
 
 parent.innerHTML = "";
 renderCards(postsWithTagsChunks[0], parent);
-viewMoreBtn("View more", "secondary", "view-more-btn", parent);
-buttonAction(postsWithTagsChunks, "view-more-btn", parent, "View more", "secondary");
+viewMoreBtn("View more", "secondary", "view-more-btn", btnParent);
+buttonAction(postsWithTagsChunks, "view-more-btn", parent, btnParent);
 
 createPost();
 searchFeed(postsWithTags);
+
+console.log(postsWithTagsChunks);
