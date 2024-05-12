@@ -27,6 +27,7 @@ export function createPost() {
       document.getElementById("textareaControl").value = "";
     } catch (error) {
       console.log(error);
+      throw Error;
     }
   });
 }
