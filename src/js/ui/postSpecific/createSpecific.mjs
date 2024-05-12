@@ -31,25 +31,39 @@ export function createSpecific(object, person) {
     cardTop.append(avatarContainer);
   
     const bioWrap = document.createElement("div");
-    bioWrap.classList.add("w-auto");
-  
+    bioWrap.classList.add("col");
+
     const user = document.createElement("h4");
     user.textContent = `@${person.author.name}`;
     bioWrap.append(user);
-  
+
     const time = document.createElement("time");
     time.setAttribute("datetime", object.data.created);
     time.textContent = object.data.created.match(/^\d{4}-\d{2}-\d{2}/);
     bioWrap.append(time);
-  
+
     cardTop.append(bioWrap);
-  
+
+    const settingsContainer = document.createElement("div");
+    settingsContainer.classList.add("w-auto");
+
+    const penWrap = document.createElement("div");
+    penWrap.classList.add("custom-cursor", "p-2");
+
+    const settingsPen = document.createElement("i");
+    settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
+    penWrap.append(settingsPen);
+
+    settingsContainer.append(penWrap);
+
+    cardTop.append(settingsContainer);
+
     element.append(cardTop);
-  
+
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("ratio", "ratio-16x9");
     element.append(imageContainer);
-  
+
     const image = document.createElement("img");
     image.src = object.data.media.url;
     image.setAttribute("alt", object.data.media.alt);
@@ -60,7 +74,6 @@ export function createSpecific(object, person) {
     textBox.classList.add("my-4", "fs-3", "p-2");
     textBox.textContent = object.data.title;
     element.append(textBox);
-
   
     return element;
   }
