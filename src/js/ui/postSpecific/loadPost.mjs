@@ -14,29 +14,26 @@ import { getComments } from "../../data/API/getComments.mjs";
 export async function loadPost() {
     const postId = getID("id");
     if (!postId) {
-        console.error ("Post ID is missing from the URL");
-        return;
+      console.error("Post ID is missing from the URL");
+      return;
     }
     try {
-        const post = await getPost(postId);
-        const person = await findUserByPostId(postId, postsWithTags);
-        let postElement = createSpecific(post, person);
-        const container = document.querySelector(".post-container");
-        container.innerHTML = ""; // Clear the spinner
-        container.append(postElement);
-        const commentComponent = createCommentForm();
-        container.append(commentComponent);
+      const post = await getPost(postId);
+      const person = await findUserByPostId(postId, postsWithTags);
+      let postElement = createSpecific(post, person);
+      const container = document.querySelector(".post-container");
+      container.innerHTML = ""; // Clear the spinner
+      container.append(postElement);
+      const commentComponent = createCommentForm();
+      container.append(commentComponent);
 
-        const comments = await getComments(postId);
-        if (comments && comments.length > 0) {
+      const comments = await getComments(postId);
+      if (comments && comments.length > 0) {
         displayComments(comments);
-        } else {
-        console.log("No comments to display");
-    }
-
+      }
     } catch (error) {
-    console.error("Failed to load post", error);
-    console.error("Error details:", error.message);
+      console.error("Failed to load post", error);
+      console.error("Error details:", error.message);
     }
 }
 
