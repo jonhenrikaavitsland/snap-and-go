@@ -74,6 +74,15 @@ export function createSpecific(object, person) {
     textBox.classList.add("my-4", "fs-3", "p-2");
     textBox.textContent = object.data.title;
     element.append(textBox);
+
+    const reactionContainer = document.createElement("div");
+
+    const reactionElement = document.createElement("button");
+    reactionElement.textContent = "Like";
+    reactionElement.classList.add("btn", "btn-outline-primary", "ms-1", "mb-1");
+    reactionContainer.append(reactionElement);
+
+    element.append(reactionContainer);
   
     return element;
   }
