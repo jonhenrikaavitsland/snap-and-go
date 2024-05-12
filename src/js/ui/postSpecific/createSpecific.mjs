@@ -1,4 +1,12 @@
-
+/**
+ * * Creates a DOM element that represents a specific post with detailed information about the author.
+ * The created element includes sections for the author's avatar, name, and the post's creation time,
+ * as well as the main content of the post like its title and associated media.
+ * 
+ * @param {Object} object - The post object containing data about the post including media and creation time.
+ * @param {Object} person - The user object containing details about the post author such as avatar and name.
+ * @returns {HTMLElement} A 'div' element structured as a Bootstrap card containing the post and author information.
+ */
 
 export function createSpecific(object, person) {
     const element = document.createElement("div");
@@ -49,7 +57,7 @@ export function createSpecific(object, person) {
     imageContainer.append(image);
 
     const textBox = document.createElement("div");
-    textBox.classList.add("my-4", "fs-3");
+    textBox.classList.add("my-4", "fs-3", "p-2");
     textBox.textContent = object.data.title;
     element.append(textBox);
 
