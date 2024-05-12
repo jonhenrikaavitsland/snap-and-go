@@ -57,19 +57,15 @@ nav {
   }
 
   .feed-container {
-    row-gap: 30px !important;
-
-    .card {
-      width: 48%;
-    }
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px !important;
   }
 }
 
 @include media-breakpoint-up(xl) {
   .feed-container {
-    .card {
-      width: 31%;
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
