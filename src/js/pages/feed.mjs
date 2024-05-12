@@ -3,6 +3,7 @@ import { renderCards } from "../render/renderCards.mjs";
 import { createPost } from "../ui/createPost/createPost.mjs";
 import { logOut } from "../ui/logOut/logOut.mjs";
 import { searchFeed } from "../ui/searchFeed/searchFeed.mjs";
+import { sortFeed } from "../ui/sortFeed/sortFeed.mjs";
 import { buttonAction } from "../ui/viewMoreBtnFeedPage/buttonAction.mjs";
 import { viewMoreBtn } from "../ui/viewMoreBtnFeedPage/viewMoreBtn.mjs";
 
@@ -16,4 +17,5 @@ buttonAction(postsWithTagsChunks, "view-more-btn", parent, btnParent);
 
 createPost();
 searchFeed(postsWithTags);
+sortFeed(postsWithTags, parent);
 logOut();
