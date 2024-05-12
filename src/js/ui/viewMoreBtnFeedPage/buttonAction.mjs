@@ -14,7 +14,6 @@ import { viewMoreBtn } from "./viewMoreBtn.mjs";
  */
 export function buttonAction(array, classname, parent, btnParent) {
   let length = array.length;
-  console.log("length:", length);
   let currentPos = 1;
   const moreBtn = document.querySelector(`.${classname}`);
 
