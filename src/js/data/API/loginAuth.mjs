@@ -16,8 +16,7 @@ export function loginAuth() {
     const validState = validateUser();
     if (validState === true) {
       await loginUser(email, password);
+      window.location.href = `/profile/`;
     }
-
-    window.location.href = `/profile/`;
   });
 }
