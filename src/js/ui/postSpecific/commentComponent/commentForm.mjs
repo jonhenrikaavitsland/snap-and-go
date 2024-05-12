@@ -1,4 +1,8 @@
-
+/**
+ * Creates and returns a form element designed for submitting comments. 
+ *
+ * @returns {HTMLElement} A div element containing a complete, styled form for user comments.
+ */
 
 
 export function createCommentForm() {
