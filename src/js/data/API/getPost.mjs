@@ -12,15 +12,12 @@ import { fetchData } from "./fetch.mjs";
 
 export async function getPost(id) {
     const url = `${API_BASE}${API_POSTS}/${id}`;  
-    const options = {
+    const post = await fetchData(url, {
         headers: {
             Authorization: `Bearer ${load("token")}`,
             "X-Noroff-API-Key": API_KEY
         }
-    };
-
-    
-    const post = await fetchData(url, options);
+    });
     return post;  
 }
 
