@@ -37,6 +37,5 @@ try {
 }
 
 searchFeed(postsWithTags, parent, btnParent);
-console.log(searchFeed);
 sortFeed(postsWithTags, parent);
 logOut();
