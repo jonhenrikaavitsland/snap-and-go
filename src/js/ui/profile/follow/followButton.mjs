@@ -12,6 +12,7 @@ export async function followButton(profileName) {
       const result = await apiFollowFunction(action, profileName);
       console.log("This is the result: ", result);
       save("following", result.data.following);
+      save("followers", result.data.followers);
 
       updateFollowButton(profileName, button);
     } catch (error) {

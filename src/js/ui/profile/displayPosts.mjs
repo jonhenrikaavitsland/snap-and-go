@@ -2,7 +2,9 @@ import { getPostsWithAuthor } from "../../data/API/getPostsWithAuthor.mjs";
 
 export async function displayPosts(user) {
   const posts = await getPostsWithAuthor(user);
-  const imageContainer = document.querySelector(".row-profile");
+  const contentContainer = document.querySelector(".content-container");
+  const imageContainer = document.createElement("div");
+  imageContainer.className = "row row-profile";
   imageContainer.innerHTML = "";
 
   console.log(posts);
@@ -17,5 +19,6 @@ export async function displayPosts(user) {
     img.className = "profile-gallery-img";
     col.append(img);
     imageContainer.append(col);
+    contentContainer.append(imageContainer);
   }
 }
