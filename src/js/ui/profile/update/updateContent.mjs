@@ -11,7 +11,9 @@ export function updateContent(activeTabId, user) {
       break;
     case "posts-tab":
       displayPosts(user);
+      break;
     case "following-tab":
       displayFollowing(user);
+      break;
   }
 }
