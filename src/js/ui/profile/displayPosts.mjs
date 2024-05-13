@@ -18,13 +18,12 @@ export async function displayPosts(user) {
     anchor.href = `/feed/post/?id=${posts.data[i].id}`;
 
     const img = document.createElement("img");
-    img.src = posts.data[i].media.url;
+    img.src = `${posts.data[i].media.url}`;
     img.className = "profile-gallery-img";
 
     anchor.append(img);
     col.append(anchor);
     imageContainer.append(col);
+    contentContainer.append(imageContainer);
   }
-
-  contentContainer.append(imageContainer);
 }
