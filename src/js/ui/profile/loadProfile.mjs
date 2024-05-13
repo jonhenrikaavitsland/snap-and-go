@@ -6,6 +6,7 @@ import { displayCounts } from "../../ui/profile/counts/displayCounts.mjs";
 import { displayPosts } from "./displayPosts.mjs";
 import { followButton } from "./follow/followButton.mjs";
 import { getFollowersAndFollowing } from "../../localStorage/getValue/getFollowInfo.mjs";
+import { setupTabListeners } from "../../listener/tabListeners.mjs";
 
 export async function loadProfile() {
   const name = getID("name");
@@ -15,10 +16,10 @@ export async function loadProfile() {
     user = await getProfileById(name);
     displayUserProfile(user, false);
     displayCounts(user);
-    displayPosts(name);
     console.log("this is name in loadprofile function: ", name);
     followButton(name);
-    getFollowersAndFollowing(name);
+    displayPosts(name);
+    setupTabListeners(name);
   } else {
     const session = getUserSession();
     user = session.profile.name;

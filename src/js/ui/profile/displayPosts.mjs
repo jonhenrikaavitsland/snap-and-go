@@ -5,7 +5,7 @@ export async function displayPosts(user) {
   const contentContainer = document.querySelector(".content-container");
   const imageContainer = document.createElement("div");
   imageContainer.className = "row row-profile";
-  imageContainer.innerHTML = "";
+  contentContainer.innerHTML = "";
 
   console.log(posts);
   console.log(Object.keys(posts.data).length);
