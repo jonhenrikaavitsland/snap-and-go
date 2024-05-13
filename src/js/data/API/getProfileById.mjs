@@ -14,6 +14,7 @@ export async function getProfileById(id) {
       "X-Noroff-API-Key": API_KEY,
     },
   });
+  console.log("this is the id: ", id);
   console.log(user);
   return user;
 }
