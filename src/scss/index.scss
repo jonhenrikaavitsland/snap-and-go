@@ -22,6 +22,10 @@ nav {
       border: 0;
     }
   }
+
+  .notification-alert {
+    display: none;
+  }
 }
 
 .fa-duotone {
@@ -50,12 +54,14 @@ nav {
 .btn-overlap .btn {
   margin-right: -10px;
 }
+
 .profile-gallery-img {
   object-fit: cover;
   height: 95%;
   width: 95%;
   border-radius: 5px;
 }
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
