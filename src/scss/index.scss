@@ -62,6 +62,10 @@ nav {
   border-radius: 5px;
 }
 
+.profile-image {
+  aspect-ratio: 1 !important;
+}
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
