@@ -15,7 +15,6 @@ export async function loadProfile() {
     user = await getProfileById(name);
     displayUserProfile(user, false);
     displayCounts(user);
-    console.log("this is name in loadprofile function: ", name);
     followButton(name);
     displayPosts(name);
     setupTabListeners(name);
@@ -25,7 +24,6 @@ export async function loadProfile() {
     const updatedUser = await getProfileById(user);
     displayUserProfile(updatedUser, true);
     displayCounts(updatedUser);
-    console.log("this is updatedUser: ", updatedUser);
     displayPosts(user);
     setupTabListeners(user);
   }

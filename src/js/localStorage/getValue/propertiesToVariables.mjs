@@ -8,7 +8,6 @@
  * @returns {Object} An object containing the user's name, biography, and image URL.
  */
 export function propertiesToVariables(user) {
-  console.log(user);
   const userData = user.data ? user.data : user;
 
   const name = userData.name;

@@ -4,7 +4,6 @@ import { load } from "../../localStorage/load.mjs";
 
 export async function getUserById(id) {
   const url = `${API_BASE}${API_PROFILES}/${id}`;
-  console.log(url);
 
   const object = {
     headers: {
@@ -16,7 +15,6 @@ export async function getUserById(id) {
 
   try {
     const user = await fetchData(url, object);
-    console.log(user);
     return user;
   } catch (error) {
     console.log(error);

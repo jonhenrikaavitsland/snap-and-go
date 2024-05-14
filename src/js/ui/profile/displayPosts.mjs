@@ -7,8 +7,6 @@ export async function displayPosts(user) {
   imageContainer.className = "row row-profile";
   contentContainer.innerHTML = "";
   contentContainer.classList.remove("w-50");
-  console.log("this is posts from displayPosts: ", posts);
-  console.log(Object.keys(posts.data).length);
 
   for (let i = 0; i < Object.keys(posts.data).length; i++) {
     const col = document.createElement("div");
