@@ -47,7 +47,8 @@ nav {
   row-gap: 20px !important;
 }
 
-.custom-cursor {
+.custom-cursor,
+.avatar-option {
   cursor: pointer;
 }
 
@@ -60,6 +61,14 @@ nav {
   height: 95%;
   width: 95%;
   border-radius: 5px;
+}
+
+.profile-image {
+  aspect-ratio: 1 !important;
+}
+
+.selected-avatar {
+  border: 5px solid #ff7373;
 }
 
 @include media-breakpoint-up(md) {
