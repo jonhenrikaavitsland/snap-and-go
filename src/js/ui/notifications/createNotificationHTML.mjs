@@ -23,7 +23,7 @@ export function createNotificationHTML(changes) {
       });
 
       const postElement = document.createElement("p");
-      postElement.textContent = `This post has ${post.comments} new comments and ${post.reactions} new reactions!`;
+      postElement.textContent = `This post has ${post.comments || post.reactions} new interactions!`;
       postWrap.append(postElement);
 
       element.append(postWrap);
