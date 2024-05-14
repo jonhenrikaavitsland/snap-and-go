@@ -1,7 +1,11 @@
 import { getObject } from "../../../localStorage/getValue/getObject.mjs";
+import { handleDetailsSubmit } from "./handleDetailsSubmit.mjs";
 
 export function displayDetails() {
   const user = getObject();
+  console.log("this is user stuff", user.bio);
+  console.log("this is user stuff", user.avatar.url);
+  console.log("this is user stuff", user.name);
   console.log("this is user in displayDetails: ", user);
 
   const container = document.querySelector(".content-container");
@@ -41,4 +45,5 @@ export function displayDetails() {
   form.append(submitButton);
 
   container.append(form);
+  form.addEventListener("submit", (event) => handleDetailsSubmit(event, user.name));
 }
