@@ -88,9 +88,19 @@
           </div>
         </section>
       </div>
-      <div class="container-fluid settings-container d-flex justify-content-center">
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div class="container-fluid settings-container d-flex justify-content-center flex-column align-items-center">
+        <div class="btn-group btn-overlap w-25">
+          <button id="avatar-tab" class="btn btn-secondary z-3 rounded d-flex flex-column">
+            <span>Avatar</span>
+          </button>
+          <button id="details-tab" class="btn btn-light rounded d-flex flex-column">
+            <span>Details</span>
+          </button>
+        </div>
+        <div class="content-container mt-4">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
       </div>
     </main>
