@@ -7,6 +7,7 @@ export function logOut() {
   if (location.pathname !== "/" || location.pathname !== "/register/") {
     logOutLink.addEventListener("click", function () {
       clearUserSession();
+      localStorage.removeItem("alertChanges");
       pageRedirect("/");
     });
   }
