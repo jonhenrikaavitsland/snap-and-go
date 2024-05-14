@@ -18,7 +18,7 @@ export async function notifications() {
     console.log("ClearBtn", clearBtn);
     const modalBody = document.querySelector(".modal-body");
     console.log("ModalBody:", modalBody);
-    let alertSpotted;
+    let alertSpotted = false;
 
     if (localStorage.getItem("alertChanges")) {
       // if object is in storage, load.
@@ -27,7 +27,7 @@ export async function notifications() {
       // check if new object has changed
       const changes = findChanges(oldObject, notificationObject);
       // if it has changed, what has changed?
-      if (changes.length !== 0) {
+      if (Object.keys(changes).length !== 0) {
         console.log("changes:", changes);
         // If it has changed, alert user
         const newModal = createNotificationHTML(changes);
@@ -40,17 +40,18 @@ export async function notifications() {
         alertSpotted = false;
         clearBtn.addEventListener("click", () => {
           alertSpotted = true;
+          console.log("alertSpotted:", alertSpotted);
+          // When user has seen the alert, clear alert
+          if (alertSpotted) {
+            notificationNumberParent.style.display = "none";
+            notificationParent.removeAttribute("data-bs-toggle");
+            notificationParent.classList.remove("custom-cursor");
+            // Store new data
+            save("alertChanges", notificationObject);
+          } else {
+            return; // Exits the function since change has not been spotted yet
+          }
         });
-        // When user has seen the alert, clear alert
-        if (alertSpotted) {
-          notificationNumberParent.style.display = "none";
-          notificationParent.removeAttribute("data-bs-toggle");
-          notificationParent.classList.remove("custom-cursor");
-          // Store new data
-          save("alertChanges", notificationObject);
-        } else {
-          return; // Exits the function since change has not been spotted yet
-        }
       } else {
         return; // Exits the function since there is no changes
       }
