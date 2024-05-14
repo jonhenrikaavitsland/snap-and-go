@@ -34,6 +34,7 @@ export async function notifications() {
         console.log("newModal html:", newModal);
         modalBody.append(newModal);
         notificationParent.setAttribute("data-bs-toggle", "modal");
+        notificationParent.classList.add("custom-cursor");
         notificationNumberParent.style.display = "block";
         // If alert is active, do not store to local storage
         alertSpotted = false;
@@ -44,6 +45,7 @@ export async function notifications() {
         if (alertSpotted) {
           notificationNumberParent.style.display = "none";
           notificationParent.removeAttribute("data-bs-toggle");
+          notificationParent.classList.remove("custom-cursor");
           // Store new data
           save("alertChanges", notificationObject);
         } else {
