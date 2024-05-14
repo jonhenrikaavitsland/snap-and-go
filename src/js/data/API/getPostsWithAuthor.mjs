@@ -9,8 +9,5 @@ export async function getPostsWithAuthor(author) {
       "X-Noroff-API-Key": API_KEY,
     },
   });
-  console.log(`${API_BASE}${API_PROFILES}/${author}${API_POSTS}`);
-  console.log("This is the author: ", author);
-  console.log("This is the posts: ", posts);
   return posts;
 }

@@ -34,6 +34,26 @@
                   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                   <label class="form-check-label" for="flexSwitchCheckDefault">Dark-mode</label>
                 </li>
+                <li class="nav-item notification position-relative" data-bs-target="#news-modal">
+                  <span class="nav-link disabled">News</span>
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-secondary border border-light rounded-circle notification-alert">
+                    <span class="visually-hidden">unread notifications</span>
+                  </span>
+                  <div class="modal fade" id="news-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-label">Notifications:</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary">Clear notifications!</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link" data-ol-has-click-handler="">Profile</a>
                 </li>

@@ -9,7 +9,6 @@ export function navUnderline() {
       return; // Exit the function early
     } else {
       const navItems = document.querySelectorAll(".navbar-nav li:nth-last-child(-n+3)");
-      console.log(navItems);
       navItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
           item.classList.add("border-bottom", "border-secondary");
