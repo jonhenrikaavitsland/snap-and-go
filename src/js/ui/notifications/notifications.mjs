@@ -27,7 +27,7 @@ export async function notifications() {
       // check if new object has changed
       const changes = findChanges(oldObject, notificationObject);
       // if it has changed, what has changed?
-      if (changes.length > 0) {
+      if (changes.length !== 0) {
         console.log("changes:", changes);
         // If it has changed, alert user
         const newModal = createNotificationHTML(changes);
