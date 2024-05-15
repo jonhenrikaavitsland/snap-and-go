@@ -40,4 +40,3 @@ try {
 searchFeed(postsWithTags, parent, btnParent);
 sortFeed(postsWithTags, parent);
 checkTextInputLength();
-logOut();
