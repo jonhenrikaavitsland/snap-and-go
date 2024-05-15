@@ -1,12 +1,14 @@
 /**
- * A function to check if input value is too long.
- * @param {object} input
- * @param {number} length
- * @returns alert if limit was reached!
+ * This function checks input length and returns visible information on the screen.
  */
-export function checkTextInputLength(input, length) {
-  if (input.length > length) {
-    alert(`Text exceeds the ${length} characters limit.`);
-    return;
-  }
+export function checkTextInputLength() {
+  const textarea = document.querySelector("#textareaControl");
+  console.log(textarea);
+  const charCount = document.querySelector(".char-count");
+  console.log(charCount);
+
+  textarea.addEventListener("input", function () {
+    const textLength = textarea.value.length;
+    charCount.textContent = textLength + "/150";
+  });
 }
