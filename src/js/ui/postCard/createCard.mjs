@@ -6,9 +6,6 @@
 export function createCard(object) {
   const element = document.createElement("div");
   element.classList.add("card", "custom-cursor");
-  element.addEventListener("click", function () {
-    document.location.href = `./post/?id=${object.id}`;
-  });
 
   const cardTop = document.createElement("div");
   cardTop.classList.add("card-header", "row", "gap-3");
@@ -30,6 +27,9 @@ export function createCard(object) {
 
   const bioWrap = document.createElement("div");
   bioWrap.classList.add("w-auto");
+  bioWrap.addEventListener("click", () => {
+    document.location.href = `/profile/?name=${object.author.name}`;
+  });
 
   const user = document.createElement("h4");
   user.textContent = `@${object.author.name}`;
@@ -46,6 +46,9 @@ export function createCard(object) {
 
   const imageContainer = document.createElement("div");
   imageContainer.classList.add("ratio", "ratio-16x9");
+  imageContainer.addEventListener("click", function () {
+    document.location.href = `./post/?id=${object.id}`;
+  });
   element.append(imageContainer);
 
   const image = document.createElement("img");
