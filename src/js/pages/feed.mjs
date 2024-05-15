@@ -2,6 +2,7 @@ import { postsWithTags, postsWithTagsChunks } from "../data/posts.mjs";
 import { ERROR_API_POSTS, ERROR_CREATE_POST, ERROR_RENDER_VM_BTN } from "../errorHandling/errors.mjs";
 import { renderError } from "../errorHandling/renderError.mjs";
 import { renderCards } from "../render/renderCards.mjs";
+import { checkTextInputLength } from "../ui/createPost/checkTextInputLength.mjs";
 import { createPost } from "../ui/createPost/createPost.mjs";
 import { logOut } from "../ui/logOut/logOut.mjs";
 import { searchFeed } from "../ui/searchFeed/searchFeed.mjs";
@@ -38,4 +39,5 @@ try {
 
 searchFeed(postsWithTags, parent, btnParent);
 sortFeed(postsWithTags, parent);
+checkTextInputLength();
 logOut();
