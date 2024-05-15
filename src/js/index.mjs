@@ -3,8 +3,10 @@ import { router } from "./router/router.mjs";
 import { navUnderline } from "./ui/nav/underline/navUnderline.mjs";
 import { notifications } from "./ui/notifications/notifications.mjs";
 import { toggleDarkMode } from "./ui/darkMode/toggleDarkmode.mjs";
+import { logOut } from "./ui/logOut/logOut.mjs";
 
 router();
 navUnderline();
 notifications();
 toggleDarkMode();
+logOut();
