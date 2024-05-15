@@ -92,3 +92,10 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@include color-mode(dark) {
+  .fa-duotone {
+    --fa-primary-color: #FFF;
+    --fa-secondary-color: #FF8B8B;
+  }
+}
