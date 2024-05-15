@@ -23,5 +23,8 @@ export function personalProfileInfo(name, bio, image) {
   userName.classList.remove("placeholder", "col-4");
   userImage.classList.remove("placeholder");
   userBio.classList.remove("placeholder", "col-6");
-  followButton.classList.remove("placeholder");
+
+  if (followButton) {
+    followButton.classList.remove("placeholder");
+  }
 }
