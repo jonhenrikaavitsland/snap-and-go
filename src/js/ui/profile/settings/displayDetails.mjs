@@ -1,12 +1,12 @@
-import { getObject } from "../../../localStorage/getValue/getObject.mjs";
+import { getProfileById } from "../../../data/API/getProfileById.mjs";
+import { getUserSession } from "../../../localStorage/session/getUserSession.mjs";
 import { handleDetailsSubmit } from "./handleDetailsSubmit.mjs";
 
-export function displayDetails() {
-  const user = getObject();
-  console.log("this is user stuff", user.bio);
-  console.log("this is user stuff", user.avatar.url);
-  console.log("this is user stuff", user.name);
-  console.log("this is user in displayDetails: ", user);
+export async function displayDetails() {
+  const session = getUserSession();
+  const username = session.profile.name;
+  const user = await getProfileById(username);
+  console.log("this is the user: ", user);
 
   const container = document.querySelector(".content-container");
   container.classList.add("w-50");
@@ -22,7 +22,7 @@ export function displayDetails() {
   bioTextarea.id = "bio";
   bioTextarea.className = "form-control";
   bioTextarea.placeholder = "Enter your bio";
-  bioTextarea.value = user.bio || "";
+  bioTextarea.value = user.data.bio || "";
   form.append(bioTextarea);
 
   const avatarLabel = document.createElement("label");
@@ -35,7 +35,7 @@ export function displayDetails() {
   avatarInput.className = "form-control";
   avatarInput.placeholder = "Enter avatar URL";
   avatarInput.type = "text";
-  avatarInput.value = user.avatar?.url || "";
+  avatarInput.value = user.data.avatar?.url || "";
   form.append(avatarInput);
 
   const submitButton = document.createElement("button");
@@ -45,5 +45,5 @@ export function displayDetails() {
   form.append(submitButton);
 
   container.append(form);
-  form.addEventListener("submit", (event) => handleDetailsSubmit(event, user.name));
+  form.addEventListener("submit", (event) => handleDetailsSubmit(event, username));
 }
