@@ -20,6 +20,7 @@ export function createPost() {
     let tags = ["snapgo"];
 
     try {
+      if (!title || title === "") return; // i just added this hoping to prevent the problem in the future.
       sendPost(title, tags, mediaObject);
       console.log("Upload was successful");
 
