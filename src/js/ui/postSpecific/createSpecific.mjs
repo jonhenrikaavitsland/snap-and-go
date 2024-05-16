@@ -1,91 +1,95 @@
+import { pageRedirect } from "../../data/pageRedirect.mjs";
 import { showSettingsModal } from "./modalPost/showSettingsModal.mjs";
 
 /**
  * * Creates a DOM element that represents a specific post with detailed information about the author.
  * The created element includes sections for the author's avatar, name, and the post's creation time,
  * as well as the main content of the post like its title and associated media.
- * 
+ *
  * @param {Object} object - The post object containing data about the post including media and creation time.
  * @param {Object} person - The user object containing details about the post author such as avatar and name.
  * @returns {HTMLElement} A 'div' element structured as a Bootstrap card containing the post and author information.
  */
 
 export function createSpecific(object, person) {
-    const element = document.createElement("div");
-    element.classList.add("card", "w-100");
-  
-    const cardTop = document.createElement("div");
-    cardTop.classList.add("card-header", "row", "gap-3");
-  
-    const avatarContainer = document.createElement("div");
-    avatarContainer.classList.add("col-2");
-  
-    const aspect = document.createElement("div");
-    aspect.classList.add("ratio", "ratio-1x1");
-    avatarContainer.append(aspect);
-  
-    const avatar = document.createElement("img");
-    avatar.classList.add("img-fluid", "img-thumbnail", "rounded-circle");
-    avatar.src = person.author.avatar.url;
-    avatar.setAttribute("alt", person.author.avatar.alt);
-    aspect.append(avatar);
-  
-    cardTop.append(avatarContainer);
-  
-    const bioWrap = document.createElement("div");
-    bioWrap.classList.add("col");
+  const element = document.createElement("div");
+  element.classList.add("card", "w-100");
 
-    const user = document.createElement("h4");
-    user.textContent = `@${person.author.name}`;
-    bioWrap.append(user);
+  const cardTop = document.createElement("div");
+  cardTop.classList.add("card-header", "row", "gap-3", "custom-cursor");
+  cardTop.addEventListener("click", () => {
+    pageRedirect(`/profile/?name=${person.author.name}`);
+  });
 
-    const time = document.createElement("time");
-    time.setAttribute("datetime", object.data.created);
-    time.textContent = object.data.created.match(/^\d{4}-\d{2}-\d{2}/);
-    bioWrap.append(time);
+  const avatarContainer = document.createElement("div");
+  avatarContainer.classList.add("col-2");
 
-    cardTop.append(bioWrap);
+  const aspect = document.createElement("div");
+  aspect.classList.add("ratio", "ratio-1x1", "avatar-img", "my-1");
+  avatarContainer.append(aspect);
 
-    const settingsContainer = document.createElement("div");
-    settingsContainer.classList.add("w-auto");
+  const avatar = document.createElement("img");
+  avatar.classList.add("img-fluid", "img-thumbnail", "rounded-circle");
+  avatar.src = person.author.avatar.url;
+  avatar.setAttribute("alt", person.author.avatar.alt);
+  aspect.append(avatar);
 
-    const penWrap = document.createElement("div");
-    penWrap.classList.add("custom-cursor", "p-2");
+  cardTop.append(avatarContainer);
 
-    const settingsPen = document.createElement("i");
-    settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
-    penWrap.append(settingsPen);
-    settingsPen.addEventListener('click', () => showSettingsModal(object.data.id));
+  const bioWrap = document.createElement("div");
+  bioWrap.classList.add("col");
 
-    settingsContainer.append(penWrap);
+  const user = document.createElement("h4");
+  user.textContent = `@${person.author.name}`;
+  bioWrap.append(user);
 
-    cardTop.append(settingsContainer);
+  const time = document.createElement("time");
+  time.setAttribute("datetime", object.data.created);
+  time.textContent = object.data.created.match(/^\d{4}-\d{2}-\d{2}/);
+  bioWrap.append(time);
 
-    element.append(cardTop);
+  cardTop.append(bioWrap);
 
-    const imageContainer = document.createElement("div");
-    imageContainer.classList.add("ratio", "ratio-16x9");
-    element.append(imageContainer);
+  const settingsContainer = document.createElement("div");
+  settingsContainer.classList.add("w-auto");
 
-    const image = document.createElement("img");
-    image.src = object.data.media.url;
-    image.setAttribute("alt", object.data.media.alt);
-    image.classList.add("card-img-bottom", "img-fluid");
-    imageContainer.append(image);
+  const penWrap = document.createElement("div");
+  penWrap.classList.add("custom-cursor", "p-2");
 
-    const textBox = document.createElement("div");
-    textBox.classList.add("my-4", "fs-3", "p-2");
-    textBox.textContent = object.data.title;
-    element.append(textBox);
+  const settingsPen = document.createElement("i");
+  settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
+  penWrap.append(settingsPen);
+  settingsPen.addEventListener("click", () => showSettingsModal(object.data.id));
 
-    const reactionContainer = document.createElement("div");
+  settingsContainer.append(penWrap);
 
-    const reactionElement = document.createElement("button");
-    reactionElement.textContent = "Like";
-    reactionElement.classList.add("btn", "btn-outline-primary", "ms-1", "mb-1");
-    reactionContainer.append(reactionElement);
+  cardTop.append(settingsContainer);
 
-    element.append(reactionContainer);
-  
-    return element;
-  }
+  element.append(cardTop);
+
+  const imageContainer = document.createElement("div");
+  imageContainer.classList.add("ratio", "ratio-16x9");
+  element.append(imageContainer);
+
+  const image = document.createElement("img");
+  image.src = object.data.media.url;
+  image.setAttribute("alt", object.data.media.alt);
+  image.classList.add("card-img-bottom", "img-fluid");
+  imageContainer.append(image);
+
+  const textBox = document.createElement("div");
+  textBox.classList.add("my-4", "fs-3", "p-2");
+  textBox.textContent = object.data.title;
+  element.append(textBox);
+
+  const reactionContainer = document.createElement("div");
+
+  const reactionElement = document.createElement("button");
+  reactionElement.textContent = "Like";
+  reactionElement.classList.add("btn", "btn-outline-primary", "ms-1", "mb-1");
+  reactionContainer.append(reactionElement);
+
+  element.append(reactionContainer);
+
+  return element;
+}
