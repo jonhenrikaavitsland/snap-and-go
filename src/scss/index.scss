@@ -45,6 +45,10 @@ nav {
 
 .feed-container {
   row-gap: 20px !important;
+
+  .row {
+    flex-wrap: nowrap !important;
+  }
 }
 
 .custom-cursor,
