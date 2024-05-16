@@ -1,8 +1,9 @@
 import { sendPost } from "../../data/API/sendPost.mjs";
+import { updateOldObject } from "../notifications/updateOldObject.mjs";
 
 /**
- * This function gathers inputs from form field inputs and sends a 
- * create post request to the API via the sendPost function. 
+ * This function gathers inputs from form field inputs and sends a
+ * create post request to the API via the sendPost function.
  * It clears the form fields after successfully sending data to the API.
  * It console logs errors and success message. We will swap these out for visible validation later.
  */
@@ -21,9 +22,13 @@ export function createPost() {
 
     try {
       if (!title || title === "") return; // i just added this hoping to prevent the problem in the future.
-      sendPost(title, tags, mediaObject);
-      console.log("Upload was successful");
 
+      console.log("Upload was successful");
+      const response = sendPost(title, tags, mediaObject);
+      console.log("Response", response);
+      setTimeout(() => {
+        updateOldObject(response);
+      }, 2000);
       document.getElementById("image-url").value = "";
       document.getElementById("textareaControl").value = "";
     } catch (error) {
