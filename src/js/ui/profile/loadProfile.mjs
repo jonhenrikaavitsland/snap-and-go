@@ -6,10 +6,13 @@ import { displayCounts } from "../../ui/profile/counts/displayCounts.mjs";
 import { displayPosts } from "./displayPosts.mjs";
 import { followButton } from "./follow/followButton.mjs";
 import { setupTabListeners } from "../../listener/tabListeners.mjs";
+import { redirectToProfile } from "./redirectToProfile.mjs";
 
 export async function loadProfile() {
   const name = getID("name");
   let user;
+
+  redirectToProfile();
 
   if (name) {
     user = await getProfileById(name);
