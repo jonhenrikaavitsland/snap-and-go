@@ -1,3 +1,5 @@
+import { showSettingsModal } from "./modalPost/showSettingsModal.mjs";
+
 /**
  * * Creates a DOM element that represents a specific post with detailed information about the author.
  * The created element includes sections for the author's avatar, name, and the post's creation time,
@@ -53,6 +55,7 @@ export function createSpecific(object, person) {
     const settingsPen = document.createElement("i");
     settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
     penWrap.append(settingsPen);
+    settingsPen.addEventListener('click', () => showSettingsModal(object.data.id));
 
     settingsContainer.append(penWrap);
 
