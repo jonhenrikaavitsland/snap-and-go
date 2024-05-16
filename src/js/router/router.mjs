@@ -16,6 +16,8 @@ export function router() {
       return import("../pages/feed.mjs");
     case "/register/":
       return import("../pages/register.mjs");
+    case "/gallery/":
+      return import("../pages/gallery.mjs");
     case "/":
       return import("../pages/login.mjs");
     default:
