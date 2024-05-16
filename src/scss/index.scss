@@ -39,8 +39,13 @@ nav {
   height: 3rem;
 }
 
+.avatar-img,
 .user-bio div img {
   width: 131px;
+}
+
+.avatar-img {
+  height: 131px;
 }
 
 .feed-container {
