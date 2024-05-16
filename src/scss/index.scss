@@ -80,6 +80,26 @@ nav {
   border: 5px solid #ff7373;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  div {
+    grid-column: span 2;
+  }
+}
+
+@include media-breakpoint-down(md) {
+
+  .gallery {
+    div{
+      &:nth-of-type(3n) {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-up(md) {
   .search-bar {
     width: 500px !important;
@@ -94,11 +114,22 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 30px !important;
   }
+
+  .gallery {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
+
+@include media-breakpoint-only(md) { 
+  }
 
 @include media-breakpoint-up(xl) {
   .feed-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
