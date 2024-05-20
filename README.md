@@ -38,7 +38,7 @@ As we are three students, we were expected to add extra features, those are:
 
 ## Planned with:
 Completed tasks are located in the archive of the "Done" list!
-- [Trello](https://trello.com/invite/b/0DpUwXYt/ATTI7c9c0b156f08118866004db45bbec6ecBF3D54F9/js2-ca)
+- [Trello](https://trello.com/b/0DpUwXYt/js2-ca)
 
 ## Designed with:
 - [Figma](https://www.figma.com/)
