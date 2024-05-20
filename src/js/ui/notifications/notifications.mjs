@@ -18,11 +18,8 @@ export async function notifications() {
     if (localStorage.getItem("alertChanges")) {
       // if object is in storage, load.
       const oldObject = load("alertChanges");
-      console.log("NotificationsObject", notificationObject);
-      console.log("OldObject", oldObject);
       // check if new object has changed
       const changes = findChanges(oldObject, notificationObject);
-      console.log("Changes", changes);
       // if it has changed, what has changed?
       if (Object.keys(changes).length !== 0) {
         // If it has changed, alert user

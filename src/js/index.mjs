@@ -5,6 +5,7 @@ import { notifications } from "./ui/notifications/notifications.mjs";
 import { toggleDarkMode } from "./ui/darkMode/toggleDarkmode.mjs";
 import { logOut } from "./ui/logOut/logOut.mjs";
 import { updateOldObject } from "./ui/notifications/updateOldObject.mjs";
+import { logoRedirect } from "./ui/logo/logoRedirect.mjs";
 
 router();
 navUnderline();
@@ -12,3 +13,4 @@ notifications();
 toggleDarkMode();
 logOut();
 updateOldObject();
+logoRedirect();

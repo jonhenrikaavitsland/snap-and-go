@@ -4,12 +4,10 @@ import { save } from "../../localStorage/save.mjs";
 export async function updateOldObject(responsePromise) {
   const oldObject = load("alertChanges");
   let updatedObject;
-  console.log("Update Old:", oldObject);
 
   if (responsePromise) {
     try {
       const response = await responsePromise;
-      console.log(response);
 
       if (response) {
         const {
@@ -24,7 +22,6 @@ export async function updateOldObject(responsePromise) {
         if (updatedObject.posts) {
           updatedObject.posts.push(newPost);
         }
-        console.log(updatedObject);
         save("alertChanges", updatedObject);
       }
     } catch (error) {
