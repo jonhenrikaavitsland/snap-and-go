@@ -5,14 +5,14 @@ export function logoRedirect() {
 
   switch (location.pathname) {
     case "/":
+    case "/404/":
+    case "/feed/":
       break;
     case "/register/":
       logo.classList.add("custom-cursor");
       logo.addEventListener("click", () => {
         pageRedirect("/");
       });
-      break;
-    case "/404/":
       break;
     default:
       logo.classList.add("custom-cursor");
