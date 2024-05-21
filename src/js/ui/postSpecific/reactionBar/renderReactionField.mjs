@@ -1,8 +1,9 @@
 import { getPost } from "../../../data/API/getPost.mjs";
 import { reactToPost } from "../../../data/API/reactToPost.mjs";
+import { reactionBar } from "./reactionBar.mjs";
 import { reactionOptions } from "./reactionOptions.mjs";
 
-export async function renderReactionField(postId) {
+export async function renderReactionField(postId, parent) {
   const element = document.createElement("div");
   element.classList.add("position-relative");
 
@@ -17,6 +18,10 @@ export async function renderReactionField(postId) {
     reactBtn.textContent = `${react.count} ${react.symbol}`;
     reactBtn.addEventListener("click", () => {
       reactToPost(react.symbol);
+      setTimeout(() => {
+        parent.innerHTML = "";
+        reactionBar(postId);
+      }, 1000);
     });
     element.append(reactBtn);
   });
@@ -28,7 +33,7 @@ export async function renderReactionField(postId) {
   });
   element.append(otherReactions);
 
-  const options = reactionOptions();
+  const options = reactionOptions(postId, parent);
   element.append(options);
 
   return element;

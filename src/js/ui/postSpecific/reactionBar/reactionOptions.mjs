@@ -1,6 +1,7 @@
 import { reactToPost } from "../../../data/API/reactToPost.mjs";
+import { reactionBar } from "./reactionBar.mjs";
 
-export function reactionOptions() {
+export function reactionOptions(postId, parent) {
   const element = document.createElement("div");
   element.classList.add("position-absolute");
   element.classList.add("d-none");
@@ -40,6 +41,10 @@ export function reactionOptions() {
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       reactToPost(btn.textContent);
+      setTimeout(() => {
+        parent.innerHTML = "";
+        reactionBar(postId);
+      }, 1000);
     });
   });
 
