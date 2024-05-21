@@ -7,7 +7,17 @@ import { displayPosts } from "./displayPosts.mjs";
 import { followButton } from "./follow/followButton.mjs";
 import { setupTabListeners } from "../../listener/tabListeners.mjs";
 import { redirectToProfile } from "./redirectToProfile.mjs";
-
+/**
+ * Loads and displays a user's profile page based on the ID provided in the query string or the current session.
+ *
+ * This function first attempts to retrieve a user ID from the query string. If present, it fetches the profile
+ * for that ID, displays the profile, counts, posts, and sets up interaction listeners. If no ID is found in the
+ * query string, it defaults to the user ID from the current session, which is the logged in user. It then gives editing permissions
+ * and then performs similar actions to fetch and display the user's details, counts, and posts.
+ *
+ * @async
+ * @returns {Promise<void>} A Promise that resolves when all profile information has been loaded and displayed.
+ */
 export async function loadProfile() {
   const name = getID("name");
   let user;

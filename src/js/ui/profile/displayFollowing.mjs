@@ -1,5 +1,16 @@
 import { getFollowersAndFollowing } from "../../localStorage/getValue/getFollowInfo.mjs";
-
+/**
+ * Fetches and displays the list of profiles that a specified user is following.
+ *
+ * This function retrieves both followers and following lists for the user by calling `getFollowersAndFollowing`.
+ * It then dynamically populates a designated content container with elements representing each profile the user
+ * is following. The display for each followed user includes their avatar, username, and a button linking to their
+ * profile page. The layout is designed to be responsive and adjusts for different screen sizes.
+ *
+ * @async
+ * @param {Object} user - The user object containing identification data used to fetch the list of followed profiles.
+ * @returns {Promise<void>} A Promise that resolves when the following list has been fully displayed.
+ */
 export async function displayFollowing(user) {
   const { followers, following } = await getFollowersAndFollowing(user);
   const container = document.querySelector(".content-container");
