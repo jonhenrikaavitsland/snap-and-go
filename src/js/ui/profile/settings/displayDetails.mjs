@@ -9,7 +9,9 @@ export async function displayDetails() {
   console.log("this is the user: ", user);
 
   const container = document.querySelector(".content-container");
-  container.classList.add("w-50");
+  container.classList.add("col-12");
+  container.classList.add("col-md-6");
+  container.classList.remove("w-50");
 
   const form = document.createElement("form");
   form.id = "detailsForm";

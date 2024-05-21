@@ -3,7 +3,9 @@ import { getFollowersAndFollowing } from "../../localStorage/getValue/getFollowI
 export async function displayFollowers(user) {
   const { followers, following } = await getFollowersAndFollowing(user);
   const container = document.querySelector(".content-container");
-  container.classList.add("w-50");
+  container.classList.add("col-12");
+  container.classList.add("col-md-6");
+  container.classList.remove("w-50");
   followers.forEach((follower) => {
     const row = document.createElement("div");
     const followerDiv = document.createElement("div");
