@@ -83,6 +83,7 @@ export function createSpecific(object, person) {
   element.append(textBox);
 
   const reactionContainer = document.createElement("div");
+  reactionContainer.classList.add("parent-btn");
 
   const reactionElement = document.createElement("button");
   reactionElement.textContent = "Like";
