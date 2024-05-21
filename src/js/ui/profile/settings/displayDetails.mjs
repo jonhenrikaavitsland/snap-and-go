@@ -1,7 +1,18 @@
 import { getProfileById } from "../../../data/API/getProfileById.mjs";
 import { getUserSession } from "../../../localStorage/session/getUserSession.mjs";
 import { handleDetailsSubmit } from "./handleDetailsSubmit.mjs";
-
+/**
+ * Fetches and displays the user's profile details in a form for editing.
+ *
+ * This function retrieves the current user's session to obtain the username, then fetches the user's
+ * profile using that username. The profile details, including bio and avatar URL, are then displayed
+ * in a form within a specified content container. The form allows the user to update their bio and
+ * avatar URL. Changes can be submitted to update the user's profile on the server.
+ *
+ * @async
+ * @function displayDetails
+ * @returns {Promise<void>} A Promise that resolves when the function has completed rendering the form.
+ */
 export async function displayDetails() {
   const session = getUserSession();
   const username = session.profile.name;

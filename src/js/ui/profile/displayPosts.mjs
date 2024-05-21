@@ -1,5 +1,16 @@
 import { getPostsWithAuthor } from "../../data/API/getPostsWithAuthor.mjs";
-
+/**
+ * Fetches and displays posts created by a specified user.
+ *
+ * This function retrieves posts for the user from a server-side function `getPostsWithAuthor`.
+ * The posts are then dynamically displayed in a grid layout within the content container. Each post is
+ * presented as an image inside an anchor element, which links to the individual post's page. The layout
+ * and structure are designed to adjust for responsiveness across different device sizes.
+ *
+ * @async
+ * @param {Object} user - The user object containing identification data used to fetch the posts.
+ * @returns {Promise<void>} A Promise that resolves when the posts have been fully displayed.
+ */
 export async function displayPosts(user) {
   const posts = await getPostsWithAuthor(user);
   const contentContainer = document.querySelector(".content-container");
