@@ -21,7 +21,6 @@ export function displayAvatars() {
   container.classList.add("w-50");
   const avatarContainer = document.createElement("div");
   avatarContainer.className = "d-flex flex-wrap ";
-  console.log("ey");
   let selectedAvatarUrl = "";
 
   predefinedAvatars.forEach((avatarUrl) => {
