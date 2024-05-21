@@ -14,7 +14,14 @@ const predefinedAvatars = [
   "https://tinypic.host/images/2024/05/14/femaleGiraffe.md.webp",
   "https://tinypic.host/images/2024/05/14/femaleCat.md.webp",
 ];
-
+/**
+ * Displays a set of predefined avatars allowing the user to select and save a chosen avatar.
+ *
+ * This function dynamically creates a grid of avatar images from a predefined list. Each avatar can be clicked
+ * to select it, with visual feedback indicating the selected avatar. It clears the existing content in a specified
+ * container, configures the container for the display of avatars, and adds functionality to save the selected avatar.
+ * If no avatar is selected when attempting to save, an alert is shown to prompt the user to make a selection.
+ */
 export function displayAvatars() {
   const container = document.querySelector(".content-container");
   container.innerHTML = "";
