@@ -11,6 +11,12 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here
 
+@media (orientation: landscape) {
+  main {
+    min-height: 400px;
+  }
+}
+
 nav {
   figure {
     max-width: 130px;
@@ -49,7 +55,8 @@ nav {
 }
 
 .feed-container {
-  row-gap: 20px !important;
+  display: grid !important;
+  gap: 20px !important;
 
   .row {
     flex-wrap: nowrap !important;
@@ -139,7 +146,6 @@ nav {
   }
 
   .feed-container {
-    display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 30px !important;
   }
