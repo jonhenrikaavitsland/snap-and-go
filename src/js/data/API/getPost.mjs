@@ -11,7 +11,7 @@ import { fetchData } from "./fetch.mjs";
 
 
 export async function getPost(id) {
-    const url = `${API_BASE}${API_POSTS}/${id}`;  
+    const url = `${API_BASE}${API_POSTS}/${id}?_reactions=true`;  
     const post = await fetchData(url, {
         headers: {
             Authorization: `Bearer ${load("token")}`,

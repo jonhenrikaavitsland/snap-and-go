@@ -3,10 +3,30 @@ import { fetchData } from "./fetch.mjs";
 import { getID } from "../getID.mjs";
 import { load } from "../../localStorage/load.mjs";
 
-export function reactToPost() {
-  const likeBtn = document.querySelector(".btn-outline-primary");
+export async function reactToPost(symbol) {
   const id = getID("id");
-  const url = `${API_BASE}${API_POSTS}/${id}/react/👍`;
+  let url;
+  switch (symbol) {
+    case "👍":
+      url = `${API_BASE}${API_POSTS}/${id}/react/👍`;
+      break;
+    case "🤣":
+      url = `${API_BASE}${API_POSTS}/${id}/react/🤣`;
+      break;
+    case "❤️":
+      url = `${API_BASE}${API_POSTS}/${id}/react/❤️`;
+      break;
+    case "😡":
+      url = `${API_BASE}${API_POSTS}/${id}/react/😡`;
+      break;
+    case "🎉":
+      url = `${API_BASE}${API_POSTS}/${id}/react/🎉`;
+      break;
+    case "😯":
+      url = `${API_BASE}${API_POSTS}/${id}/react/😯`;
+      break;
+  }
+
   const object = {
     method: "PUT",
     headers: {
@@ -15,9 +35,6 @@ export function reactToPost() {
     },
   };
 
-  likeBtn.addEventListener("click", async function () {
-    let reactResponse = await fetchData(url, object);
-    console.log(reactResponse);
-    return reactResponse;
-  });
+  let reactResponse = await fetchData(url, object);
+  return reactResponse;
 }
