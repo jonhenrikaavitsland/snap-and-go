@@ -18,7 +18,9 @@ const predefinedAvatars = [
 export function displayAvatars() {
   const container = document.querySelector(".content-container");
   container.innerHTML = "";
-  container.classList.add("w-50");
+  container.classList.add("col-12");
+  container.classList.add("col-md-6");
+  container.classList.remove("w-50");
   const avatarContainer = document.createElement("div");
   avatarContainer.className = "d-flex flex-wrap ";
   let selectedAvatarUrl = "";
