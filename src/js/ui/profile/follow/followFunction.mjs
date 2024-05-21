@@ -10,8 +10,5 @@ export async function apiFollowFunction(action, profileName) {
       "X-Noroff-API-Key": API_KEY,
     },
   });
-  console.log("This is the action", action);
-  console.log("This is the profileName", profileName);
-  console.log("This is the response", response);
   return response;
 }
