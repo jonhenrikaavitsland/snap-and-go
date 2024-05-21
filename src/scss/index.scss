@@ -11,12 +11,6 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here
 
-@media (orientation: landscape) {
-  main {
-    min-height: 400px;
-  }
-}
-
 nav {
   figure {
     max-width: 130px;
@@ -93,7 +87,7 @@ nav {
   grid-template-rows: repeat(67, 100px);
 
   &:hover > img {
-    filter: brightness(.5) saturate(.5);
+    filter: brightness(0.5) saturate(0.5);
   }
 
   & > img:hover {
@@ -104,9 +98,7 @@ nav {
     grid-column: span 2;
     aspect-ratio: 1;
     clip-path: path("M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z");
-    transition: 
-      clip-path 500ms,
-      filter 500ms;
+    transition: clip-path 500ms, filter 500ms;
 
     &:hover {
       clip-path: path("M 0 0 C 100 0 100 0 200 0 C 200 50 200 50 200 80 C 200 100 200 100 200 120 C 200 150 200 150 200 200 C 100 200 100 200 0 200 C 0 150 0 150 0 120 C 0 100 0 100 0 80 Z");
@@ -120,15 +112,15 @@ nav {
 }
 
 @keyframes zIndexSmooth {
-  0%, 100% {
+  0%,
+  100% {
     z-index: 4;
   }
 }
 
 @include media-breakpoint-down(md) {
-
   .gallery {
-    img{
+    img {
       &:nth-of-type(3n) {
         grid-column: 2 / span 2;
       }
@@ -156,7 +148,7 @@ nav {
   }
 }
 
-@include media-breakpoint-only(md) { 
+@include media-breakpoint-only(md) {
   .gallery {
     img {
       &:nth-child(4),
@@ -214,7 +206,6 @@ nav {
   }
 }
 
-
 @include media-breakpoint-up(xl) {
   .feed-container {
     grid-template-columns: repeat(3, 1fr);
@@ -247,7 +238,7 @@ nav {
 
 @include color-mode(dark) {
   .fa-duotone {
-    --fa-primary-color: #FFF;
-    --fa-secondary-color: #FF8B8B;
+    --fa-primary-color: #fff;
+    --fa-secondary-color: #ff8b8b;
   }
 }
