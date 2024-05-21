@@ -25,6 +25,8 @@ export async function reactToPost(symbol) {
     case "😯":
       url = `${API_BASE}${API_POSTS}/${id}/react/😯`;
       break;
+    default:
+      return;
   }
 
   const object = {
