@@ -27,7 +27,7 @@ export async function renderReactionField(postId, parent) {
   });
 
   const otherReactions = document.createElement("button");
-  otherReactions.classList.add("btn", "fa-duotone", "fa-icons");
+  otherReactions.classList.add("btn", "btn-lg", "fa-duotone", "fa-icons");
   otherReactions.addEventListener("click", () => {
     options.classList.toggle("d-none");
   });
