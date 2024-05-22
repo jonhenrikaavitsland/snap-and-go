@@ -1,5 +1,6 @@
 import { load } from "../../localStorage/load.mjs";
 import { API_BASE, API_KEY, API_POSTS } from "./constants.mjs";
+import { fetchData } from "./fetch.mjs";
 
 
 /**
@@ -10,24 +11,13 @@ import { API_BASE, API_KEY, API_POSTS } from "./constants.mjs";
 
 export async function getPost(postId) {
     const url = `${API_BASE}${API_POSTS}/${postId}`;
-    try {
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${load("token")}`,
-                "X-Noroff-API-Key": API_KEY,
-            },
-        });
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(
-                `Failed to get post: ${response.status} ${errorText}`
-            );
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error("Error getting post:", error);
-        throw error;
+    const object = {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${load("token")}`,
+            "X-Noroff-API-Key": API_KEY,
+        },
     }
+    const response = await fetchData(url, object);
+    return response;
 }
