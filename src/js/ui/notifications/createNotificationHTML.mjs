@@ -1,5 +1,11 @@
 import { pageRedirect } from "../../data/pageRedirect.mjs";
 
+/**
+ * Receives a object containing the current changes to comments and  reactions.
+ * Creates the html element to display when notifications are clicked.
+ * @param {object} changes 
+ * @returns a html element to be displayed.
+ */
 export function createNotificationHTML(changes) {
   const element = document.createElement("div");
 

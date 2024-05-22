@@ -6,6 +6,11 @@ import { renderCards } from "../../render/renderCards.mjs";
 const newestFirst = document.querySelector(".newest-first");
 const oldestFirst = document.querySelector(".oldest-first");
 
+/**
+ * listens to if the sort function is clicked and then sorts array and displays array.
+ * @param {array} posts 
+ * @param {variable} parent 
+ */
 export function sortFeed(posts, parent) {
   let newArray = [];
   let chunkedArray;

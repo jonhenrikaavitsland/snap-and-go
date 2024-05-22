@@ -93,14 +93,18 @@
         <img src="./src/assets/images/logo.png" class="img-fluid mx-auto d-block" id="logo" alt="snap and go" />
         <form method="POST">
           <div class="mb-3">
-            <label for="inputEmail" class="form-label"></label>
-            <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp" />
-            <div class="invalid-feedback invalid-feedback-email">Email must be a noroff.no or stud.noroff.no email!</div>
-            <div class="valid-feedback valid-feedback-email">Looks good!</div>
+            <label for="inputEmail" class="form-label" id="emailHelp">
+              <span class="visually-hidden">email:</span>
+            </label>
+            <input type="text" name="inputEmail" class="form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp" />
+            <div class="invalid-feedback invalid-feedback-email" id="emailHelp">Email must be a noroff.no or stud.noroff.no email!</div>
+            <div class="valid-feedback valid-feedback-email" id="emailHelp">Looks good!</div>
           </div>
           <div class="mb-3">
-            <label for="inputPassword" class="form-label"></label>
-            <input type="password" name="password" class="form-control" placeholder="Password" id="inputPassword" />
+            <label for="inputPassword" class="form-label">
+              <span class="visually-hidden">password:</span>
+            </label>
+            <input type="password" name="inputPassword" class="form-control" placeholder="Password" id="inputPassword" />
             <div class="invalid-feedback invalid-feedback-pw">Must be 8 characters and no special characters!</div>
             <div class="valid-feedback valid-feedback-pw">Looks good!</div>
           </div>

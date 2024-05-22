@@ -33,7 +33,7 @@ export function showSettingsModal(postId, postAuthor) {
     header.append(closeButton);
 
     const body = document.createElement('div');
-    body.className = 'modal-body';
+    body.className = "d-flex modal-body gap-3";
 
     const editButton = document.createElement('button');
     editButton.type = 'button';

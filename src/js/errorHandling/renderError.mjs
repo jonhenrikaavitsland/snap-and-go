@@ -1,5 +1,10 @@
 import { errorRouter } from "./errorRouter.mjs";
 
+/**
+ * Displays a given error to the parent location.
+ * @param {variable} error 
+ * @param {string} parent 
+ */
 export function renderError(error, parent) {
   const currentError = errorRouter(error);
 

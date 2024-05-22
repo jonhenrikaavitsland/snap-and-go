@@ -1,5 +1,15 @@
 import { load } from "../../localStorage/load.mjs";
 
+/**
+ * Toggles between dark-mode and light-mode
+ * @param {variable} element 
+ * @param {variable} logo 
+ * @param {variable} slogan 
+ * @param {variable} activeNavLink 
+ * @param {variable} logoSecondary 
+ * @param {variable} inputWrap 
+ * @param {Array} buttons 
+ */
 export function toggle(element, logo, slogan, activeNavLink, logoSecondary, inputWrap, buttons) {
   if (location.pathname === "/404/") {
     return;

@@ -1,3 +1,9 @@
+/**
+ * checks if new object is different than old object, and returns a object with changes if changes are found.
+ * @param {object} oldObject
+ * @param {object} newObject
+ * @returns {object} containing new count of comments and reacts,
+ */
 export function findChanges(oldObject, newObject) {
   let changes = {};
 

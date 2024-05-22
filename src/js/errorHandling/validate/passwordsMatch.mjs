@@ -1,3 +1,7 @@
+/**
+ * Checks if password and repeat password is matching
+ * @returns returns true if both matches, otherwise returns false!
+ */
 export function passwordsMatch() {
   const password = document.querySelector("#inputPassword");
   const passwordRepeat = document.querySelector("#inputRepeatPassword");

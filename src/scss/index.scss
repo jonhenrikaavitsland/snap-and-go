@@ -41,11 +41,11 @@ nav {
 
 .avatar-img,
 .user-bio div img {
-  width: 131px;
+  max-width: 131px;
 }
 
 .avatar-img {
-  height: 131px;
+  max-height: 131px;
 }
 
 .feed-container {
