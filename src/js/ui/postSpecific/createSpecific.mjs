@@ -22,7 +22,7 @@ export function createSpecific(object, person) {
   });
 
   const avatarContainer = document.createElement("div");
-  avatarContainer.classList.add("col-2");
+  avatarContainer.classList.add("col-12", "col-sm-2");
 
   const aspect = document.createElement("div");
   aspect.classList.add("ratio", "ratio-1x1", "avatar-img", "my-1");
