@@ -29,6 +29,7 @@ export async function displayPosts(user) {
 
     const img = document.createElement("img");
     img.src = `${posts.data[i].media.url}`;
+    img.alt = "One of my posts";
     img.className = "profile-gallery-img";
 
     anchor.append(img);
