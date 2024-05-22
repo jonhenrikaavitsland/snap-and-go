@@ -14,7 +14,7 @@ export async function renderReactionField(postId, parent) {
 
   reactions.forEach(react => {
     const reactBtn = document.createElement("button");
-    reactBtn.classList.add("btn");
+    reactBtn.classList.add("btn", "btn-lg");
     reactBtn.textContent = `${react.count} ${react.symbol}`;
     reactBtn.addEventListener("click", () => {
       reactToPost(react.symbol);
