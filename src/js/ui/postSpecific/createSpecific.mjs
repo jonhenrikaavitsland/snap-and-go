@@ -55,15 +55,15 @@ export function createSpecific(object, person) {
 
   const penWrap = document.createElement("div");
   penWrap.classList.add("custom-cursor", "p-2");
+  penWrap.addEventListener("click", event => {
+    event.stopPropagation();
+    const postAuthor = person.author.name;
+    showSettingsModal(object.data.id, postAuthor);
+  });
 
   const settingsPen = document.createElement("i");
   settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
   penWrap.append(settingsPen);
-  settingsPen.addEventListener("click", (event) => {
-    event.stopPropagation(); 
-    const postAuthor = person.author.name; 
-    showSettingsModal(object.data.id, postAuthor); 
-  });
 
   settingsContainer.append(penWrap);
 
