@@ -8,7 +8,8 @@
     "watch": "sass --watch src/scss:dist/css & live-server",
     "watch2": "sass src/scss:dist/css --watch",
     "start": "live-server",
-    "dev": "npm-run-all --parallel watch2 start"
+    "dev": "npm-run-all --parallel watch2 start",
+    "docs": "jsdoc -c ./conf.json -r"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
+    "jsdoc": "^4.0.3",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
     "sass": "^1.75.0"
