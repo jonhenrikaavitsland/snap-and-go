@@ -93,19 +93,25 @@
         <h1 class="text-center pt-2">Register</h1>
         <form>
           <div class="mb-2">
-            <label for="inputEmail" class="form-label"></label>
+            <label for="inputEmail" class="form-label" id="emailHelp">
+              <span class="visually-hidden">email</span>
+            </label>
             <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email" aria-describedby="emailHelp" />
-            <div class="invalid-feedback invalid-feedback-email">Email must be a noroff.no or stud.noroff.no email!</div>
-            <div class="valid-feedback valid-feedback-email">Looks good!</div>
+            <div class="invalid-feedback invalid-feedback-email" id="emailHelp">Email must be a noroff.no or stud.noroff.no email!</div>
+            <div class="valid-feedback valid-feedback-email" id="emailHelp">Looks good!</div>
           </div>
           <div class="mb-2">
-            <label for="inputPassword" class="form-label"></label>
+            <label for="inputPassword" class="form-label">
+              <span class="visually-hidden">password</span>
+            </label>
             <input type="password" name="password" class="form-control" placeholder="Password" id="inputPassword" />
             <div class="invalid-feedback invalid-feedback-pw">Please enter a password with 8 characters!</div>
             <div class="valid-feedback valid-feedback-pw">Looks good!</div>
           </div>
           <div class="mb-2">
-            <label for="inputRepeatPassword" class="form-label"></label>
+            <label for="inputRepeatPassword" class="form-label">
+              <span class="visually-hidden">repeat password</span>
+            </label>
             <input type="password" name="repeatPassword" class="form-control" placeholder="Repeat Password" id="inputRepeatPassword" />
             <div class="invalid-feedback invalid-feedback-pw-match">Needs to match password!</div>
             <div class="valid-feedback valid-feedback-pw-match">Looks good!</div>
