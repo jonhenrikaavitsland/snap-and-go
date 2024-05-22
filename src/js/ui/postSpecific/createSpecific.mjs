@@ -59,7 +59,11 @@ export function createSpecific(object, person) {
   const settingsPen = document.createElement("i");
   settingsPen.classList.add("fa-duotone", "fa-pen-to-square");
   penWrap.append(settingsPen);
-  settingsPen.addEventListener("click", () => showSettingsModal(object.data.id));
+  settingsPen.addEventListener("click", (event) => {
+    event.stopPropagation(); 
+    const postAuthor = person.author.name; 
+    showSettingsModal(object.data.id, postAuthor); 
+  });
 
   settingsContainer.append(penWrap);
 
