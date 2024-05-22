@@ -39,6 +39,11 @@ export async function renderReactionField(postId, parent) {
   });
   element.append(otherReactions);
 
+  const buttonText = document.createElement("span");
+  buttonText.textContent = "Choose reaction";
+  buttonText.classList.add("visually-hidden");
+  otherReactions.append(buttonText);
+  
   const options = reactionOptions(postId, parent);
   element.append(options);
 
