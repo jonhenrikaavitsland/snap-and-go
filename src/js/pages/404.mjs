@@ -1,12 +1,4 @@
-import { pageRedirect } from "../data/pageRedirect.mjs"
+import { run404 } from "../data/run404.mjs";
 
-// Run 404 
-run404();
-
-function run404() {
-  if (location.pathname === "/404/") {
-    return;
-  } else {
-    pageRedirect("/404/");
-  }
-}
+// Run 404
+run404("/404/");
