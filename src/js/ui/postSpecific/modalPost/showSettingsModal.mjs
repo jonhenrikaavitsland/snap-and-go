@@ -1,7 +1,7 @@
 import { deletePostAlert } from "./deletePostAlert.mjs";
+import { editPostForm } from "./editPostForm.mjs";
 
-
-export function showSettingsModal(postId) {
+export function showSettingsModal(postId, postAuthor) {
     const modal = document.createElement('div');
     modal.className = 'modal fade';
     modal.id = 'settingsModal';
@@ -39,13 +39,16 @@ export function showSettingsModal(postId) {
     editButton.type = 'button';
     editButton.className = 'btn btn-primary';
     editButton.textContent = 'Edit Post';
-    editButton.onclick = () => editPostForm(postId);
+    editButton.onclick = () => editPostForm(postId, postAuthor);
 
     const deleteButton = document.createElement('button');
     deleteButton.type = 'button';
     deleteButton.className = 'btn btn-danger';
     deleteButton.textContent = 'Delete Post';
-    deleteButton.onclick = () => deletePostAlert(postId);
+    deleteButton.onclick = () => {
+        deletePostAlert(postId, postAuthor); 
+    };
+    
 
     body.append(editButton);
     body.append(deleteButton);
