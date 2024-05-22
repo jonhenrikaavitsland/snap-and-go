@@ -3,6 +3,12 @@ import { reactToPost } from "../../../data/API/reactToPost.mjs";
 import { reactionBar } from "./reactionBar.mjs";
 import { reactionOptions } from "./reactionOptions.mjs";
 
+/**
+ * returns the final component that will display current reactions plus the button to choose what reactions to give to the current post.
+ * @param {string} postId 
+ * @param {variable} parent 
+ * @returns {element} html element.
+ */
 export async function renderReactionField(postId, parent) {
   const element = document.createElement("div");
   element.classList.add("position-relative");

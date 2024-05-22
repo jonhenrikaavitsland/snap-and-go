@@ -4,8 +4,11 @@ import { createNotificationHTML } from "./createNotificationHTML.mjs";
 import { createNotificationsObject } from "./createNotificationsObject.mjs";
 import { findChanges } from "./findChanges.mjs";
 
+/**
+ * IF on correct page, notify user if there are new notifications.
+ */
 export async function notifications() {
-  if (location.pathname === "/" || location.pathname === "/register/") {
+  if (location.pathname === "/" || location.pathname === "/register/" || location.pathname === "/404/") {
     return; // Exit function early
   } else {
     const notificationParent = document.querySelector(".notification");

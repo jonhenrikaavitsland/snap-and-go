@@ -1,7 +1,10 @@
 import { validateUser } from "../../errorHandling/validate/validateUser.mjs";
 import { registerUser } from "./registerUser.mjs";
 
-
+/**
+ * Checks that all inputs of the register form meets criteria before attempting to register the user.
+ * If the registration was ok, we redirect the user to the login screen, else there will be an error on screen.
+ */
 export function registerAuth() {
   const form = document.querySelector("form");
   form.addEventListener("submit", async event => {

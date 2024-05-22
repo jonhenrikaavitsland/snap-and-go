@@ -2,6 +2,10 @@ import { getPostsWithAuthor } from "../../data/API/getPostsWithAuthor.mjs";
 import { getUserById } from "../../data/API/getUserById.mjs";
 import { load } from "../../localStorage/load.mjs";
 
+/**
+ * gets notifications data and builds out a object of notifications
+ * @returns object
+ */
 export async function createNotificationsObject() {
   // get id
   const { name } = load("profile") || {};

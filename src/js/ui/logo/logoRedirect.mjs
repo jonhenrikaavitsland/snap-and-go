@@ -1,5 +1,8 @@
 import { pageRedirect } from "../../data/pageRedirect.mjs";
 
+/**
+ * IF the user clicks the logo, they redirect to the correct page unless they are on a page where this functionality is not supposed to work.
+ */
 export function logoRedirect() {
   const logo = document.querySelector(".logo-wrap");
 

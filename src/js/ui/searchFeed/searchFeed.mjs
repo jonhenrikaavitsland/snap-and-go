@@ -3,6 +3,12 @@ import { renderCards } from "../../render/renderCards.mjs";
 const searchForm = document.querySelector(".search-bar");
 const tagToFilter = "snapgo";
 
+/**
+ * Searches through the posts in the feed and looks for words matching search term. It renders the results or a text message if no posts was found.
+ * @param {Array} posts 
+ * @param {variable} parent 
+ * @param {variable} btnParent 
+ */
 export function searchFeed(posts, parent, btnParent) {
   searchForm.addEventListener("submit", event => {
     event.preventDefault();

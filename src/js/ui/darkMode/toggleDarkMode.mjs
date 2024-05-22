@@ -1,6 +1,11 @@
 import { toggleMode } from "./toggleMode.mjs";
 import { toggle } from "./toggle.mjs";
 
+/**
+ * Function holds all inputs for the toggle function.
+ * It checks if dark-mode is active, and if it is it will keep it active. 
+ * Also runs the toggleMode function that will let us toggle between the states.
+ */
 export function toggleDarkMode() {
   const modeSwitch = document.querySelector("#flexSwitchCheckDefault");
   const element = document.querySelector("html");

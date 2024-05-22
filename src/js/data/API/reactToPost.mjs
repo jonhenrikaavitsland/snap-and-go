@@ -3,6 +3,17 @@ import { fetchData } from "./fetch.mjs";
 import { getID } from "../getID.mjs";
 import { load } from "../../localStorage/load.mjs";
 
+/**
+ * Function will match input to the correct url for this API request!
+ * @param {string} symbol 
+ * @returns the original post id, the symbol reacted with, and an array of all reactions on the post.
+ * @example 
+ * ```js
+ * symbol = "👍"
+ * switch statement says that url = `${API_BASE}${API_POSTS}/${id}/react/👍`;
+ * The API request is now performed with this url. 
+ * ```
+ */
 export async function reactToPost(symbol) {
   const id = getID("id");
   let url;

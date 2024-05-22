@@ -1,6 +1,12 @@
 import { reactToPost } from "../../../data/API/reactToPost.mjs";
 import { reactionBar } from "./reactionBar.mjs";
 
+/**
+ * creates a container of buttons to select a reaction to give a post.
+ * @param {string} postId 
+ * @param {variable} parent 
+ * @returns {element} html element. 
+ */
 export function reactionOptions(postId, parent) {
   const element = document.createElement("div");
   element.classList.add("position-absolute");
