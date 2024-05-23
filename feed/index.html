@@ -18,8 +18,8 @@
             <i class="fa-duotone fa-bars fa-xl"></i>
           </button>
           <figure class="row">
-            <img src="../src/assets/images/logo.png" class="img-fluid" alt="snap and go" />
-            <img src="../src/assets/images/slogan.png" class="img-fluid" alt="snap share connect" />
+            <img src="../src/assets/images/logo.png" class="img-fluid img-logo" alt="snap and go" />
+            <img src="../src/assets/images/slogan.png" class="img-fluid img-slogan" alt="snap share connect" />
           </figure>
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
@@ -35,13 +35,36 @@
                   <label class="form-check-label" for="flexSwitchCheckDefault">Dark-mode</label>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link" data-ol-has-click-handler="">Profile</a>
+                  <a href="/gallery/" class="nav-link" data-ol-has-click-handler="">Gallery</a>
+                </li>
+                <li class="nav-item notification position-relative"  data-bs-target="#news-modal">
+                  <span class="nav-link disabled">News</span>
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-secondary border border-light rounded-circle notification-alert">
+                    <span class="visually-hidden">unread notifications</span>
+                  </span>
+                  <div class="modal fade" id="news-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-label">Notifications:</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary">Clear notifications!</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
                 <li class="nav-item">
-                  <a href="../feed/" class="nav-link active fw-bold" data-ol-has-click-handler="">Feed</a>
+                  <a href="/profile/" class="nav-link" data-ol-has-click-handler="">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link active fw-bold" aria-current="page" data-ol-has-click-handler="">Feed</a>
                 </li>
                 <li class="nav-item pb-2 pb-md-0">
-                  <a href="#" class="nav-link" aria-current="page" data-ol-has-click-handler="">Log out</a>
+                  <a href="#" class="nav-link nav-log-out" data-ol-has-click-handler="">Log out</a>
                 </li>
               </ul>
             </div>
@@ -50,57 +73,67 @@
       </nav>
     </header>
     <main class="flex-grow-1 pt-4">
+      <h1 class="visually-hidden">Feed</h1>
       <div class="container-fluid pb-5">
         <div class="row justify-content-end input-group">
           <div class="w-auto border d-flex align-items-center px-2 rounded-start">
             <p>Amaze us!</p>
           </div>
-          <button class="btn btn-secondary w-auto" type="button" data-bs-toggle="collapse" data-bs-target="#uploadForm" aria-expanded="false" aria-controls="uploadForm">
+          <button class="btn btn-secondary w-auto button-second" type="button" data-bs-toggle="collapse" data-bs-target="#uploadForm" aria-expanded="false" aria-controls="uploadForm">
             <i class="fa-solid fa-image fa-xl"></i>
+            <span class="visually-hidden">upload</span>
           </button>
         </div>
         <form method="post" class="collapse card card-body upload-body" id="uploadForm">
           <div class="mb-3">
-            <label for="formFileMultiple" class="form-label">What would you like to share?</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple accept=".jpg, .jpeg, .png" required>
+            <label for="image-url" class="form-label">Your image url:</label>
+            <div class="input-group">
+              <span class="input-group-text" id="image-upload2">https://example.com/photo123.jpg</span>
+              <input type="text" class="form-control" id="image-url" aria-describedby="image-upload2 image-upload3" placeholder="Please input your image-url here..." required>
+            </div>
+            <div class="form-text" id="image-upload3">Please keep images below 200kb!</div>
           </div>
           <div class="mb-3">
             <label for="textareaControl" class="form-label">Max 150 characters</label>
-            <textarea class="form-control" id="textareaControl" rows="3" maxlength="150" required></textarea>
+            <textarea class="form-control" id="textareaControl" rows="3" maxlength="150" placeholder="your story goes here..." required>  </textarea>
+            <div class="char-count">0/150</div>
           </div>
           <div class="mb-3 d-flex justify-content-end">
-            <button class="btn btn-secondary upload-btn" type="submit">Upload</button>
+            <button class="btn btn-secondary upload-btn button-second" type="submit">Upload</button>
           </div>
         </form>
       </div>
-      <div class="container-fluid d-flex justify-content-md-end">
+      <div class="container-fluid d-flex flex-column justify-content-md-end error-parent">
         <form class="d-flex pb-5 search-bar w-100" role="search">
           <div class="input-group">
             <input class="form-control" type="search" placeholder="Search the feed" aria-label="Search" aria-describedby="button-addon2" />
-            <button class="btn btn-secondary" type="submit" id="button-addon2">Search</button>
+            <button class="btn btn-secondary button-second" type="submit" id="button-addon2">Search</button>
           </div>
         </form>
       </div>
       <div class="container-fluid d-flex justify-content-end pb-5">
         <div class="btn-group">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Sort by</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle button-second" data-bs-toggle="dropdown" aria-expanded="false">Sort by</button>
           <ul class="dropdown-menu">
             <li>
-              <span class="dropdown-item">Newest first</span>
+              <span class="dropdown-item newest-first">Newest first</span>
             </li>
             <li>
-              <span class="dropdown-item">Oldest first</span>
+              <span class="dropdown-item oldest-first">Oldest first</span>
             </li>
           </ul>
         </div>
       </div>
-      <div class="feed-container container-fluid row gap-3 justify-content-center">
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div class="feed-container container-fluid">
+        <div class="row justify-content-center">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
       </div>
+      <div class="btn-container container-fluid row gap-0 justify-content-between"></div>
     </main>
-    <footer class="p-5 bg-white text-center">
+    <footer class="p-5 text-center">
       <span> &copy; 2024 SNAP&GO </span>
     </footer>
   </body>

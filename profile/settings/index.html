@@ -3,104 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Customize your profile to stand out amongst the crowd and get recognized."
-    />
+    <meta name="description" content="Customize your profile to stand out amongst the crowd and get recognized." />
     <title>Profile Settings | SNAP & GO</title>
-    <link
-      rel="shortcut icon"
-      href="../../src/assets/icons/favicon.svg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../../src/assets/icons/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="../../dist/css/index.css" />
     <script type="module" src="../../src/js/index.mjs"></script>
-    <script
-      src="https://kit.fontawesome.com/a4285c5b9b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/a4285c5b9b.js" crossorigin="anonymous"></script>
   </head>
   <body class="d-flex flex-column vh-100 p-4 p-md-5 container-xl">
     <header class="container-fluid">
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid position-relative justify-content-center">
-          <button
-            class="navbar-toggler position-absolute top-0 start-0"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="toggle navigation"
-          >
+          <button class="navbar-toggler position-absolute top-0 start-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="toggle navigation">
             <i class="fa-duotone fa-bars fa-xl"></i>
           </button>
-          <figure class="row">
-            <img
-              src="../../src/assets/images/logo.png"
-              class="img-fluid"
-              alt="snap and go"
-            />
-            <img
-              src="../../src/assets/images/slogan.png"
-              class="img-fluid"
-              alt="snap share connect"
-            />
+          <figure class="row logo-wrap">
+            <img src="../../src/assets/images/logo.png" class="img-fluid img-logo" alt="snap and go" />
+            <img src="../../src/assets/images/slogan.png" class="img-fluid img-slogan" alt="snap share connect" />
           </figure>
-          <div
-            class="offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-              <h5
-                class="offcanvas-title visually-hidden"
-                id="offcanvasNavbarLabel"
-              >
-                Menu
-              </h5>
-              <button
-                type="button"
-                data-bs-dismiss="offcanvas"
-                aria-label="close"
-              >
+              <h5 class="offcanvas-title visually-hidden" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" data-bs-dismiss="offcanvas" aria-label="close">
                 <i class="fa-duotone fa-xmark fa-2xl"></i>
               </button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 gap-2">
                 <li class="nav-item form-check form-switch pe-md-2">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="flexSwitchCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckDefault"
-                    >Dark-mode</label
-                  >
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Dark-mode</label>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link" data-ol-has-click-handler=""
-                    >Profile</a
-                  >
+                  <a href="/gallery/" class="nav-link" data-ol-has-click-handler="">Gallery</a>
+                </li>
+                <li class="nav-item notification position-relative" data-bs-target="#news-modal">
+                  <span class="nav-link disabled">News</span>
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-secondary border border-light rounded-circle notification-alert">
+                    <span class="visually-hidden">unread notifications</span>
+                  </span>
+                  <div class="modal fade" id="news-modal" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-label">Notifications:</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary">Clear notifications!</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </li>
                 <li class="nav-item">
-                  <a
-                    href="../../feed/"
-                    class="nav-link"
-                    data-ol-has-click-handler=""
-                    >Feed</a
-                  >
+                  <a href="/profile/" class="nav-link" data-ol-has-click-handler="">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../feed/" class="nav-link" data-ol-has-click-handler="">Feed</a>
                 </li>
                 <li class="nav-item pb-2 pb-md-0">
-                  <a
-                    href="#"
-                    class="nav-link"
-                    aria-current="page"
-                    data-ol-has-click-handler=""
-                    >Log out</a
-                  >
+                  <a href="#" class="nav-link nav-log-out" data-ol-has-click-handler="">Log out</a>
                 </li>
               </ul>
             </div>
@@ -109,44 +73,41 @@
       </nav>
     </header>
     <main class="flex-grow-1 pt-4">
-      <nav
-        style="
-          --bs-breadcrumb-divider: url(
-            &#34;data:image/svg + xml,
-            %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;
-          );
-        "
-        aria-label="breadcrumb"
-      >
+      <h1 class="visually-hidden">Settings</h1>
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg + xml, %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;)" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Profile</a></li>
+          <li class="breadcrumb-item"><a href="/profile/">Profile</a></li>
           <li class="breadcrumb-item active" aria-current="page">Settings</li>
         </ol>
       </nav>
       <div class="row user-bio gap-4 py-5">
         <div class="w-auto">
-          <img
-            src="https://i.pravatar.cc/131"
-            class="rounded-circle img-fluid border border-2 border-dark"
-            alt="the user"
-          />
+          <img src="" class="rounded-circle img-fluid border border-2 border-dark profile-image placeholder" alt="" />
         </div>
         <section class="col d-flex flex-column">
-          <h1>@username</h1>
+          <h2 class="placeholder col-4"></h2>
           <div class="flex-grow-1 d-flex align-items-center">
-            <p>This is my bio example...</p>
+            <p class="placeholder col-6"></p>
           </div>
         </section>
       </div>
-      <div
-        class="container-fluid settings-container d-flex justify-content-center"
-      >
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <div class="container-fluid settings-container d-flex justify-content-center flex-column align-items-center">
+        <div class="btn-group btn-overlap col-12 col-md-6">
+          <button id="avatar-tab" class="btn btn-secondary z-3 rounded d-flex flex-column">
+            <span>Avatar</span>
+          </button>
+          <button id="details-tab" class="btn btn-light rounded d-flex flex-column">
+            <span>Details</span>
+          </button>
+        </div>
+        <div class="content-container mt-4">
+          <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
       </div>
     </main>
-    <footer class="p-5 bg-white text-center">
+    <footer class="p-5 text-center">
       <span> &copy; 2024 SNAP&GO </span>
     </footer>
   </body>

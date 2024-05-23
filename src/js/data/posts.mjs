@@ -1,6 +1,6 @@
-import { getPostsWithImages } from "./API/getPostsWithImage.mjs";
+import { getPostsWithTags } from "./API/getPostsWithTags.mjs";
 import { splitArrayIntoChunks } from "./splitArrayIntoChunks.mjs";
 
-export const postsWithImage = await getPostsWithImages();
+export const postsWithTags = await getPostsWithTags();
 
-export const postsWithImageChunks = await splitArrayIntoChunks(postsWithImage, 12);
+export const postsWithTagsChunks = await splitArrayIntoChunks(postsWithTags, 12);

@@ -14,7 +14,6 @@ $blue: #0066FF;
 $pink: #FF7373;
 
 $secondary: $pink;
-$dark: $black;
 
 // Body
 $body-color: $black;
@@ -48,3 +47,9 @@ $navbar-toggler-focus-width: 0;
 $navbar-light-active-color: $black;
 
 $offcanvas-horizontal-width: 250px;
+
+$navbar-light-toggler-border-color: none;
+
+$btn-border-width: 0px;
+
+$form-switch-color: rgba($black, .50) !default;

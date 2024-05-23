@@ -18,9 +18,13 @@ nav {
 
   .offcanvas-header {
     button {
-      background-color: $white;
+      background-color: transparent;
       border: 0;
     }
+  }
+
+  .notification-alert {
+    display: none;
   }
 }
 
@@ -35,8 +39,93 @@ nav {
   height: 3rem;
 }
 
+.avatar-img,
 .user-bio div img {
-  width: 131px;
+  max-width: 131px;
+}
+
+.avatar-img {
+  max-height: 131px;
+}
+
+.feed-container {
+  display: grid !important;
+  gap: 20px !important;
+
+  .row {
+    flex-wrap: nowrap !important;
+  }
+}
+
+.custom-cursor,
+.avatar-option {
+  cursor: pointer;
+}
+
+.btn-overlap .btn {
+  margin-right: -10px;
+}
+
+.profile-gallery-img {
+  object-fit: cover;
+  height: 95%;
+  width: 95%;
+  border-radius: 5px;
+}
+
+.profile-image {
+  aspect-ratio: 1 !important;
+}
+
+.selected-avatar {
+  border: 5px solid #ff7373;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(67, 100px);
+
+  &:hover > img {
+    filter: brightness(0.5) saturate(0.5);
+  }
+
+  & > img:hover {
+    filter: brightness(1) saturate(1.5);
+  }
+
+  img {
+    grid-column: span 2;
+    aspect-ratio: 1;
+    clip-path: path("M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z");
+    transition: clip-path 500ms, filter 500ms;
+
+    &:hover {
+      clip-path: path("M 0 0 C 100 0 100 0 200 0 C 200 50 200 50 200 80 C 200 100 200 100 200 120 C 200 150 200 150 200 200 C 100 200 100 200 0 200 C 0 150 0 150 0 120 C 0 100 0 100 0 80 Z");
+      z-index: 4;
+    }
+
+    &:not(:hover) {
+      animation: zIndexSmooth 300ms;
+    }
+  }
+}
+
+@keyframes zIndexSmooth {
+  0%,
+  100% {
+    z-index: 4;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .gallery {
+    img {
+      &:nth-of-type(3n) {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -46,5 +135,110 @@ nav {
 
   .custom-width {
     width: 50% !important;
+  }
+
+  .feed-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px !important;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(40, 100px);
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .gallery {
+    img {
+      &:nth-child(4),
+      &:nth-child(9),
+      &:nth-child(14),
+      &:nth-child(19),
+      &:nth-child(24),
+      &:nth-child(29),
+      &:nth-child(34),
+      &:nth-child(39),
+      &:nth-child(44),
+      &:nth-child(49),
+      &:nth-child(54),
+      &:nth-child(59),
+      &:nth-child(64),
+      &:nth-child(69),
+      &:nth-child(74),
+      &:nth-child(79),
+      &:nth-child(84),
+      &:nth-child(89),
+      &:nth-child(94),
+      &:nth-child(99) {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .gallery {
+    img {
+      &:nth-child(4),
+      &:nth-child(9),
+      &:nth-child(14),
+      &:nth-child(19),
+      &:nth-child(24),
+      &:nth-child(29),
+      &:nth-child(34),
+      &:nth-child(39),
+      &:nth-child(44),
+      &:nth-child(49),
+      &:nth-child(54),
+      &:nth-child(59),
+      &:nth-child(64),
+      &:nth-child(69),
+      &:nth-child(74),
+      &:nth-child(79),
+      &:nth-child(84),
+      &:nth-child(89),
+      &:nth-child(94),
+      &:nth-child(99) {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .feed-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(30, 100px);
+
+    img {
+      &:nth-child(5),
+      &:nth-child(12),
+      &:nth-child(19),
+      &:nth-child(26),
+      &:nth-child(33),
+      &:nth-child(40),
+      &:nth-child(47),
+      &:nth-child(54),
+      &:nth-child(61),
+      &:nth-child(68),
+      &:nth-child(75),
+      &:nth-child(82),
+      &:nth-child(89),
+      &:nth-child(96) {
+        grid-column: 2 / span 2;
+      }
+    }
+  }
+}
+
+@include color-mode(dark) {
+  .fa-duotone {
+    --fa-primary-color: #fff;
+    --fa-secondary-color: #ff8b8b;
   }
 }
